@@ -3477,3 +3477,13 @@ ol {
 	transform: scale(1.2);
 	color: #3CC032;
 }
+.title-form-n{
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 1em;
+    color: black;
+    border-bottom: solid 2px #000;
+}
+.form-margin-m{
+	margin: 100px 0;
+}
