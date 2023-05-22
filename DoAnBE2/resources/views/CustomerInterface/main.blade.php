@@ -12,15 +12,18 @@
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
 
+
     <!-- Css Styles -->
-    <link rel="stylesheet" href="cssofcustomer/css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="cssofcustomer/css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="cssofcustomer/css/elegant-icons.css" type="text/css">
-    <link rel="stylesheet" href="cssofcustomer/css/nice-select.css" type="text/css">
-    <link rel="stylesheet" href="cssofcustomer/css/jquery-ui.min.css" type="text/css">
-    <link rel="stylesheet" href="cssofcustomer/css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="cssofcustomer/css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="cssofcustomer/css/style.css" type="text/css">
+    <link rel="stylesheet" href="customer/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="customer/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="customer/css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="customer/css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="customer/css/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="customer/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="customer/css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="customer/css/style.css" type="text/css">
+
+
 </head>
 
 <body>
@@ -33,57 +36,50 @@
     <div class="humberger__menu__overlay"></div>
     <div class="humberger__menu__wrapper">
         <div class="humberger__menu__logo">
-            <a href="#"><img src="img/logo.png" alt=""></a>
+            <a class="logo" href="{{ route('home') }}">NDMHPteam</a>
         </div>
         <div class="humberger__menu__cart">
             <ul>
                 <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
                 <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
             </ul>
-            <div class="header__cart__price">item: <span>$150.00</span></div>
         </div>
         <div class="humberger__menu__widget">
+            {{-- Mobile --}}
+            {{-- Chưa đăng nhập --}}
+            <div class="header__top__right__auth">
+                <a href="{{ route('login') }}"><i class="fa fa-user"></i> Đăng nhập</a>
+            </div>
+            {{-- Đã đăng nhập --}}
             <div class="header__top__right__language">
-                <img src="img/language.png" alt="">
-                <div>English</div>
+                <i class="fa fa-user"></i>
+                <div>
+                    Tên tài khoản                                    
+                </div>
                 <span class="arrow_carrot-down"></span>
                 <ul>
-                    <li><a href="#">Spanis</a></li>
-                    <li><a href="#">English</a></li>
+                    <li><a href="information.php">Thông tin</a></li>
+                    <li><a href="information.php">Đổi mật khẩu</a></li>
+                    <li><a href="logout.php">Đăng xuất</a></li>
                 </ul>
-            </div>
-            <div class="header__top__right__auth">
-                <a href="{{route('login')}}"><i class="fa fa-user"></i> Login</a>
             </div>
         </div>
         <nav class="humberger__menu__nav mobile-menu">
             <ul>
-                <li class="active"><a href="{{ route('home') }}">Home</a></li>
-                <li><a href="{{route('shop')}}">Shop</a></li>
+                <li class="active"><a href="{{ route('home') }}">Trang chủ</a></li>
+                <li><a href="{{ route('shop') }}">Cửa hàng</a></li>
                 <li><a href="#">Pages</a>
                     <ul class="header__menu__dropdown">
-                        <li><a href="{{ route('detail') }}">Shop Details</a></li>
-                        <li><a href="{{ route('cart') }}">Shoping Cart</a></li>
-                        <li><a href="{{ route('checkout') }}">Check Out</a></li>
+                        <li><a href="{{ route('detail') }}">Chi tiết sản phẩm</a></li>
+                        <li><a href="{{ route('cart') }}">Giỏ hàng</a></li>
+                        <li><a href="{{ route('checkout') }}">Thủ tục thanh toán</a></li>
                     </ul>
                 </li>
-                <li><a href="{{ route('contact') }}">Contact</a></li>
-                <li><a href="{{ route('product-management') }}">Management</a></li>
+                <li><a href="{{ route('contact') }}">Liên hệ</a></li>
+                <li><a href="{{ route('admin.product-management') }}">Quản lí</a></li>
             </ul>
         </nav>
         <div id="mobile-menu-wrap"></div>
-        <div class="header__top__right__social">
-            <a href="#"><i class="fa fa-facebook"></i></a>
-            <a href="#"><i class="fa fa-twitter"></i></a>
-            <a href="#"><i class="fa fa-linkedin"></i></a>
-            <a href="#"><i class="fa fa-pinterest-p"></i></a>
-        </div>
-        <div class="humberger__menu__contact">
-            <ul>
-                <li><i class="fa fa-envelope"></i> hello@colorlib.com</li>
-                <li>Free Shipping for all Order of $99</li>
-            </ul>
-        </div>
     </div>
     <!-- Humberger End -->
 
@@ -93,32 +89,26 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 col-md-6">
-                        <div class="header__top__left">
-                            <ul>
-                                <li><i class="fa fa-envelope"></i> hello@colorlib.com</li>
-                                <li>Free Shipping for all Order of $99</li>
-                            </ul>
-                        </div>
                     </div>
                     <div class="col-lg-6 col-md-6">
                         <div class="header__top__right">
-                            <div class="header__top__right__social">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-linkedin"></i></a>
-                                <a href="#"><i class="fa fa-pinterest-p"></i></a>
+                            {{-- PC --}}
+                            {{-- Khi chưa đăng nhập thì hiển thị --}}
+                            <div class="header__top__right__auth">
+                                <a href="{{ route('login') }}"><i class="fa fa-user"></i> Đăng nhập</a>
                             </div>
+                            {{-- Khi đăng nhập thì hiển thị --}}
                             <div class="header__top__right__language">
-                                <img src="img/language.png" alt="">
-                                <div>English</div>
+                                <i class="fa fa-user"></i>
+                                <div>
+                                    Tên tài khoản                                    
+                                </div>
                                 <span class="arrow_carrot-down"></span>
                                 <ul>
-                                    <li><a href="#">Spanis</a></li>
-                                    <li><a href="#">English</a></li>
+                                    <li><a href="{{ route('form-profile') }}">Thông tin</a></li>
+                                    <li><a href="{{ route('change-password') }}">Đổi mật khẩu</a></li>
+                                    <li><a href="logout.php">Đăng xuất</a></li>
                                 </ul>
-                            </div>
-                            <div class="header__top__right__auth">
-                                <a href="{{route('login')}}"><i class="fa fa-user"></i> Login</a>
                             </div>
                         </div>
                     </div>
@@ -129,32 +119,33 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="header__logo">
-                        <a href="./index.html"><img src="img/logo.png" alt=""></a>
+                        <a class="logo" href="{{ route('home') }}">NDMHPteam</a>
                     </div>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-7">
                     <nav class="header__menu">
                         <ul>
-                            <li class="active"><a href="{{ route('home') }}">Home</a></li>
-                            <li><a href="{{route('shop')}}">Shop</a></li>
+                            <li class="active"><a href="{{ route('home') }}">Trang chủ</a></li>
+                            <li><a href="{{ route('shop') }}">Cửa hàng</a></li>
                             <li><a href="#">Pages</a>
                                 <ul class="header__menu__dropdown">
-                                    <li><a href="{{ route('detail') }}">Shop Details</a></li>
-                                    <li><a href="{{ route('cart') }}">Shoping Cart</a></li>
-                                    <li><a href="{{ route('checkout') }}">Check Out</a></li>
+                                    <li><a href="{{ route('detail') }}">Chi tiết sản phẩm</a></li>
+                                    <li><a href="{{ route('cart') }}">Giỏ hàng</a></li>
+                                    <li><a href="{{ route('checkout') }}">Thủ tục thanh toán</a></li>
                                 </ul>
                             </li>
-                            <li><a href="{{ route('contact') }}">Contact</a></li>
+                            <li><a href="{{ route('contact') }}">Liên hệ</a></li>
+                            <li><a href="{{ route('admin.product-management') }}">Quản lí</a></li>
                         </ul>
                     </nav>
                 </div>
-                <div class="col-lg-3">
+                <div class="col-lg-2">
                     <div class="header__cart">
                         <ul>
-                            <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
-                            <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+                            <li><a href="{{ route('like') }}"><i class="fa fa-heart"></i> <span>1</span></a></li>
+                            <li><a href="{{ route('cart') }}"><i class="fa fa-shopping-bag"></i> <span>3</span></a>
+                            </li>
                         </ul>
-                        <div class="header__cart__price">item: <span>$150.00</span></div>
                     </div>
                 </div>
             </div>
@@ -164,6 +155,51 @@
         </div>
     </header>
     <!-- Header Section End -->
+    <!-- Hero Section Begin -->
+    <section class="hero hero-normal">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="hero__categories">
+                        <div class="hero__categories__all">
+                            <i class="fa fa-bars"></i>
+                            <span>Tất cả danh mục</span>
+                        </div>
+                        <ul>
+                            <li><a href="#">Fresh Meat</a></li>
+                            <li><a href="#">Vegetables</a></li>
+                            <li><a href="#">Fruit & Nut Gifts</a></li>
+                            <li><a href="#">Fresh Berries</a></li>
+                            <li><a href="#">Ocean Foods</a></li>
+                            <li><a href="#">Butter & Eggs</a></li>
+                            <li><a href="#">Fastfood</a></li>
+                            <li><a href="#">Fresh Onion</a></li>
+                            <li><a href="#">Papayaya & Crisps</a></li>
+                            <li><a href="#">Oatmeal</a></li>
+                            <li><a href="#">Fresh Bananas</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <div class="hero__search">
+                        <div class="hero__search__form">
+                            <form action="#" method="GET">
+                                <input type="text" placeholder="Bạn cần tìm gì gì?">
+                                <button type="submit" class="site-btn">Tìm</button>
+                            </form>
+                        </div>
+                        <div class="hero__search__phone">
+                            <div class="hero__search__phone__text">
+                                <h5>0123456789</h5>
+                                <span>Hỗ chợ 24/7 thời gian</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero Section End -->
     @yield('content')
     <!-- Footer Section Begin -->
     <footer class="footer spad">
@@ -172,50 +208,13 @@
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="footer__about">
                         <div class="footer__about__logo">
-                            <a href="./index.html"><img src="img/logo.png" alt=""></a>
+                            <a class="logo" href="{{ route('home') }}">NDMHPteam</a>
                         </div>
                         <ul>
-                            <li>Address: 60-49 Road 11378 New York</li>
-                            <li>Phone: +65 11.188.888</li>
+                            <li>Địa chỉ: 60-49 Road 11378 New York</li>
+                            <li>Số điện thoại: 0123456789</li>
                             <li>Email: hello@colorlib.com</li>
                         </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 offset-lg-1">
-                    <div class="footer__widget">
-                        <h6>Useful Links</h6>
-                        <ul>
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">About Our Shop</a></li>
-                            <li><a href="#">Secure Shopping</a></li>
-                            <li><a href="#">Delivery infomation</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Our Sitemap</a></li>
-                        </ul>
-                        <ul>
-                            <li><a href="#">Who We Are</a></li>
-                            <li><a href="#">Our Services</a></li>
-                            <li><a href="#">Projects</a></li>
-                            <li><a href="#">Contact</a></li>
-                            <li><a href="#">Innovation</a></li>
-                            <li><a href="#">Testimonials</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-12">
-                    <div class="footer__widget">
-                        <h6>Join Our Newsletter Now</h6>
-                        <p>Get E-mail updates about our latest shop and special offers.</p>
-                        <form action="#">
-                            <input type="text" placeholder="Enter your mail">
-                            <button type="submit" class="site-btn">Subscribe</button>
-                        </form>
-                        <div class="footer__widget__social">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-instagram"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-pinterest"></i></a>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -224,14 +223,7 @@
                     <div class="footer__copyright">
                         <div class="footer__copyright__text">
                             <p>
-                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                                Copyright &copy;
-                                <script>
-                                    document.write(new Date().getFullYear());
-                                </script> All rights reserved | This template is made with <i
-                                    class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com"
-                                    target="_blank">Colorlib</a>
-                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                NDMHPteam - Uy tín
                             </p>
                         </div>
                         <div class="footer__copyright__payment"><img src="img/payment-item.png" alt=""></div>
@@ -243,14 +235,16 @@
     <!-- Footer Section End -->
 
     <!-- Js Plugins -->
-    <script src="cssofcustomer/js/jquery-3.3.1.min.js"></script>
-    <script src="cssofcustomer/js/bootstrap.min.js"></script>
-    <script src="cssofcustomer/js/jquery.nice-select.min.js"></script>
-    <script src="cssofcustomer/js/jquery-ui.min.js"></script>
-    <script src="cssofcustomer/js/jquery.slicknav.js"></script>
-    <script src="cssofcustomer/js/mixitup.min.js"></script>
-    <script src="cssofcustomer/js/owl.carousel.min.js"></script>
-    <script src="cssofcustomer/js/main.js"></script>
+    <script src="customer/js/jquery-3.3.1.min.js"></script>
+    <script src="customer/js/bootstrap.min.js"></script>
+    <script src="customer/js/jquery.nice-select.min.js"></script>
+    <script src="customer/js/jquery-ui.min.js"></script>
+    <script src="customer/js/jquery.slicknav.js"></script>
+    <script src="customer/js/mixitup.min.js"></script>
+    <script src="customer/js/owl.carousel.min.js"></script>
+    <script src="customer/js/main.js"></script>
+
+
 </body>
 
 </html>

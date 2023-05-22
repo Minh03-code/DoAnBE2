@@ -10,7 +10,7 @@
                             <h5 class="card-title mb-0">Quản lí danh mục</h5>
                         </div>
                         <div class="col-md-9">
-                            <a href="{{ route('add-category') }}" class="btn btn-primary">Thêm</a>
+                            <a href="{{ route('admin.add-category') }}" class="btn btn-primary">Thêm</a>
                         </div>
                     </div>
                 </div>
@@ -33,7 +33,7 @@
                                 <a href="#" class="btn btn-success">Mở khóa</a>
                             </td>
                             <td class="d-none d-md-table-cell">
-                                <a href="{{ route('edit-category') }}" class="btn btn-primary">Chỉnh sửa</a>
+                                <a href="{{ route('admin.edit-category') }}" class="btn btn-primary">Chỉnh sửa</a>
                             </td>
                         </tr>
                     </tbody>

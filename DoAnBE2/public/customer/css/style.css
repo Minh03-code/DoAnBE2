@@ -336,7 +336,7 @@ ol {
 	visibility: visible;
 }
 
-.header__top__right__language:after {
+/* .header__top__right__language:after {
 	position: absolute;
 	right: -21px;
 	top: 1px;
@@ -345,7 +345,7 @@ ol {
 	background: #000000;
 	opacity: 0.1;
 	content: "";
-}
+} */
 
 .header__top__right__language img {
 	margin-right: 6px;
@@ -3465,4 +3465,15 @@ ol {
 	.blog__details__hero__text h2 {
 		font-size: 24px;
 	}
+}
+.logo{
+	font-size: 2em;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	color: #3CC032;
+}
+.logo:hover{
+	font-size: 2em;
+	transform: scale(1.2);
+	color: #3CC032;
 }

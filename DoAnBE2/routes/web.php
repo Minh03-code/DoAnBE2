@@ -35,6 +35,15 @@ Route::get('contact', function () {
 Route::get('checkout', function () {
     return view('CustomerInterface/checkout');
 })->name('checkout'); 
+Route::get('like', function () {
+    return view('CustomerInterface/like');
+})->name('like'); 
+Route::get('form-profile', function () {
+    return view('CustomerInterface/form-profile');
+})->name('form-profile'); 
+Route::get('change-password', function () {
+    return view('CustomerInterface/change-password');
+})->name('change-password'); 
 
 // Login Register
 Route::get('login', function () {
@@ -45,30 +54,40 @@ Route::get('register', function () {
 })->name('register');
 
 // Admin interface
-Route::get('/product-management', function () {
-    return view('AdminInterface/product-management');
-})->name('product-management');
-Route::get('/category-management', function () {
-    return view('AdminInterface/category-management');
-})->name('category-management');
-Route::get('/bill-management', function () {
-    return view('AdminInterface/bill-management');
-})->name('bill-management');
-Route::get('/account-management', function () {
-    return view('AdminInterface/account-management');
-})->name('account-management');
-Route::get('/add-product', function () {
-    return view('AdminInterface/form-product');
-})->name('add-product');
-Route::get('/edit-product', function () {
-    return view('AdminInterface/form-product');
-})->name('edit-product');
-Route::get('/add-category', function () {
-    return view('AdminInterface/form-category');
-})->name('add-category');
-Route::get('/edit-category', function () {
-    return view('AdminInterface/form-category');
-})->name('edit-category');
-Route::get('/form-profile', function () {
-    return view('AdminInterface/form-profile');
-})->name('form-profile');
+Route::group(['prefix'=>'admin','as'=>'admin.'], function(){
+    
+    Route::get('/', function () {
+        return view('AdminInterface/product-management');
+    })->name('product-management');
+    Route::get('/product-management', function () {
+        return view('AdminInterface/product-management');
+    })->name('product-management');
+    Route::get('/category-management', function () {
+        return view('AdminInterface/category-management');
+    })->name('category-management');
+    Route::get('/bill-management', function () {
+        return view('AdminInterface/bill-management');
+    })->name('bill-management');
+    Route::get('/account-management', function () {
+        return view('AdminInterface/account-management');
+    })->name('account-management');
+    Route::get('/add-product', function () {
+        return view('AdminInterface/form-product');
+    })->name('add-product');
+    Route::get('/edit-product', function () {
+        return view('AdminInterface/form-product');
+    })->name('edit-product');
+    Route::get('/add-category', function () {
+        return view('AdminInterface/form-category');
+    })->name('add-category');
+    Route::get('/edit-category', function () {
+        return view('AdminInterface/form-category');
+    })->name('edit-category');
+    Route::get('/form-profile', function () {
+        return view('AdminInterface/form-profile');
+    })->name('form-profile');
+    Route::get('/change-password', function () {
+        return view('AdminInterface/change-password');
+    })->name('change-password');
+});
+

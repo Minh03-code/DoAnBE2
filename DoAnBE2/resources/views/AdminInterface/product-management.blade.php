@@ -12,7 +12,7 @@
 						<h5 class="card-title mb-0">Quản lí sản phẩm</h5>
 					</div>
 					<div class="col-md-9">
-						<a href="{{ route('add-product') }}" class="btn btn-primary">Thêm</a>
+						<a href="{{ route('admin.add-product') }}" class="btn btn-primary">Thêm</a>
 					</div>
 				</div>
 			</div>
@@ -37,7 +37,7 @@
 							<a href="#" class="btn btn-success">Mở khóa</a>
 						</td>
 						<td class="d-none d-md-table-cell">
-							<a href="{{ route('edit-product') }}" class="btn btn-primary">Chỉnh sửa</a>
+							<a href="{{ route('admin.edit-product') }}" class="btn btn-primary">Chỉnh sửa</a>
 						</td>
 					</tr>
 				</tbody>

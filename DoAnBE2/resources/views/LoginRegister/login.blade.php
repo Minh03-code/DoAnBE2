@@ -34,18 +34,18 @@
 			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
 				<form class="login100-form validate-form">
 					<span class="login100-form-title p-b-49">
-						Login
+						Đăng kí
 					</span>
 
 					<div class="wrap-input100 validate-input m-b-23" data-validate = "Username is reauired">
-						<span class="label-input100">Username</span>
-						<input class="input100" type="text" name="username" placeholder="Type your username">
+						<span class="label-input100">Tài khoản</span>
+						<input class="input100" type="text" name="username" placeholder="Nhập tài khoản của bạn">
 						<span class="focus-input100" data-symbol="&#xf206;"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate="Password is required">
-						<span class="label-input100">Password</span>
-						<input class="input100" type="password" name="pass" placeholder="Type your password">
+						<span class="label-input100">Mật khẩu</span>
+						<input class="input100" type="password" name="pass" placeholder="Nhập mật khẩu của bạn">
 						<span class="focus-input100" data-symbol="&#xf190;"></span>
 					</div>
 					
@@ -57,7 +57,7 @@
 						<div class="wrap-login100-form-btn">
 							<div class="login100-form-bgbtn"></div>
 							<button class="login100-form-btn">
-								Login
+								Đăng nhập
 							</button>
 						</div>
 					</div>
@@ -66,10 +66,10 @@
 
 					<div class="flex-col-c p-t-155">
 						<a href="{{route('home')}}" class="txt2">
-							Home
+							Trang chủ
 						</a>
 						<a href="{{route('register')}}" class="txt2">
-							Register
+							Đăng kí
 						</a>
 					</div>
 				</form>

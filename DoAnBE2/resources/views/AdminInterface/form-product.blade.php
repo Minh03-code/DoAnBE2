@@ -2,29 +2,30 @@
 
 @section('content')
     <div class="container">
-        <p class="p_addpr">Ở đây hiển thị là thêm sản phẩm nếu đường dẫn là add-product hoặc là chỉnh sửa sản phẩm nếu đường dẫn là edit-product</p>
-        <div class="content_of_add_product">
+        <p class="p-addpr">Ở đây hiển thị là thêm sản phẩm nếu đường dẫn là add-product hoặc là chỉnh sửa sản phẩm nếu đường dẫn là edit-product</p>
+        <div class="content-of-add-product">
             <form action="#" method="POST">
+                <input type="hidden" name="product-id"> {{-- Nếu là sửa thì phải có id để sửa --}}
                 <div class="mb-3">
-                    <label for="product_name" class="form-label">Tên Món</label>
-                    <input type="text" class="form-control" id="product_name" name="product_name">
+                    <label for="product-name" class="form-label">Tên món</label>
+                    <input type="text" class="form-control" id="product-name" name="product-name">
                 </div>
                 <div class="mb-3">
-                    <label for="product_price" class="form-label">Đơn Giá</label>
-                    <input type="number" class="form-control" id="product_price" name="product_price">
+                    <label for="product-price" class="form-label">Giá</label>
+                    <input type="number" class="form-control" id="product-price" name="product-price">
                 </div>
                 <div class="mb-3">
-                    <label for="product_description" class="form-label">Mô Tả Món Ăn</label>
-                    <input type="text" class="form-control" id="product_description" name="product_description">
+                    <label for="product-description" class="form-label">Mô tả món ăn</label>
+                    <input type="text" class="form-control" id="product-description" name="product-description">
                 </div>
                 <div class="mb-3">
-                    <label for="product_image" class="form-label">Chọn Ảnh</label>
-                    <input type="file" class="form-control" id="product_image" name="product_image">
+                    <label for="product-image" class="form-label">Chọn ảnh</label>
+                    <input type="file" class="form-control" id="product-image" name="product-image">
                 </div>
                 <div class="mb-3">
-                    <label for="product_image" class="form-label">Chọn Danh Mục Của Món Ăn</label>
+                    <label for="product-image" class="form-label">Chọn danh mục của món ăn</label>
                     <br>
-                    <select id="product_id" name="product_id" class="form-select">
+                    <select id="product-id" name="product-id" class="form-select">
                         <option value="1" selected>Món Nước</option>
                         <option value="2">Món Khô</option>
                     </select>

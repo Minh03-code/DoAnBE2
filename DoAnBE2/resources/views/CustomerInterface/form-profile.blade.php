@@ -1,4 +1,4 @@
-@extends('AdminInterface/main')
+@extends('CustomerInterface/main')
 
 @section('content')
     <div class="container">
