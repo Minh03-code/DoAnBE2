@@ -11,7 +11,7 @@
                         <h2>Cửa hàng NDMHPteam</h2>
                         <div class="breadcrumb__option">
                             <a href="{{ route('home') }}">Trang chủ</a>
-                            <span>Shop</span>
+                            <span>Cửa hàng</span>
                         </div>
                     </div>
                 </div>

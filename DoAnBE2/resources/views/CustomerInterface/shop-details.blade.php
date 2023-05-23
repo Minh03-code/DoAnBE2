@@ -11,7 +11,7 @@
                         <h2>Thay cái hình bên dưới thành hình đồ ăn nhé</h2>
                         <div class="breadcrumb__option">
                             <a href="{{ route('home') }}">Trang chủ</a>
-                            <a href="{{ route('home') }}">Cửa hàng</a>
+                            <a href="{{ route('shop') }}">Cửa hàng</a>
                             <span>Chi tiết sản phẩm</span>
                         </div>
                     </div>

@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="customer/css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="customer/css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="customer/css/style.css" type="text/css">
+    <link rel="stylesheet" href="customer/css/style-of-bill.css" type="text/css">
 
 
 </head>
@@ -73,6 +74,7 @@
                         <li><a href="{{ route('detail') }}">Chi tiết sản phẩm</a></li>
                         <li><a href="{{ route('cart') }}">Giỏ hàng</a></li>
                         <li><a href="{{ route('checkout') }}">Thủ tục thanh toán</a></li>
+                        <li><a href="{{ route('bill-history') }}">Lịch sử thanh toán</a></li>
                     </ul>
                 </li>
                 <li><a href="{{ route('contact') }}">Liên hệ</a></li>
@@ -132,6 +134,7 @@
                                     <li><a href="{{ route('detail') }}">Chi tiết sản phẩm</a></li>
                                     <li><a href="{{ route('cart') }}">Giỏ hàng</a></li>
                                     <li><a href="{{ route('checkout') }}">Thủ tục thanh toán</a></li>
+                                    <li><a href="{{ route('bill-history') }}">Lịch sử thanh toán</a></li>
                                 </ul>
                             </li>
                             <li><a href="{{ route('contact') }}">Liên hệ</a></li>
