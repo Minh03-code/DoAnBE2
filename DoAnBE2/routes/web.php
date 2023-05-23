@@ -89,5 +89,8 @@ Route::group(['prefix'=>'admin','as'=>'admin.'], function(){
     Route::get('/change-password', function () {
         return view('AdminInterface/change-password');
     })->name('change-password');
+    Route::get('/contact-management', function () {
+        return view('AdminInterface/form-contact');
+    })->name('contact-management');
 });
 

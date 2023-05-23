@@ -55,6 +55,11 @@
                         </a>
                     </li>
                     <li class="sidebar-item">
+                        <a class="sidebar-link" href="{{ route('admin.contact-management') }}">
+                            <span class="align-middle">Quản lí liên hệ</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
                         <a class="sidebar-link" href="{{ route('home') }}">
                             <span class="align-middle">Trang khách hàng</span>
                         </a>
