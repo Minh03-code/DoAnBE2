@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('clone_time');
             $table->string('email');
             $table->string('image_banner');
+            $table->string('map');
             $table->timestamps();
         });
     }
