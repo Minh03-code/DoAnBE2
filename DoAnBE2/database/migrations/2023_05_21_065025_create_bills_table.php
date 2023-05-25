@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('email');
             $table->string('order_notes');
             $table->integer('payment_method');
+            $table->integer('status');
             $table->timestamps();
         });
     }
