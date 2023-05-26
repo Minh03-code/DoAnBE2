@@ -11,7 +11,7 @@ class HomePageController extends MainCustomerController
 {
     public function homePage()
     {
-        $products = Product::getProductsByCategoryNumberLimit(10);
+        $products = Product::getProductByNumberLimit(16);
         $categories = Category::getAllCategory();
         return view('CustomerInterface/index',['products'=>$products,'categories'=>$categories]);
     }
