@@ -12,7 +12,10 @@
                         <label for="category-name" class="form-label">Tên danh mục</label>
                         <input type="text" class="form-control" id="category-name" name="category-name" value="{{$category->name}}">
                     </div>
-
+                    <div class="mb-3">
+                        <label for="category-image" class="form-label">Chọn ảnh</label>
+                        <input type="file" class="form-control" id="category-image" name="category-image">
+                    </div>
                     <div class="mb-3">
                         <label for="category-description" class="form-label">Mô tả danh mục</label>
                         <input type="text" class="form-control" id="category-description" name="category-description" value="{{$category->description}}">
@@ -35,7 +38,10 @@
                     <label for="category-name" class="form-label">Tên danh mục</label>
                     <input type="text" class="form-control" id="category-name" name="category-name"">
                 </div>
-
+                <div class="mb-3">
+                    <label for="category-image" class="form-label">Chọn ảnh</label>
+                    <input type="file" class="form-control" id="category-image" name="category-image">
+                </div>
                 <div class="mb-3">
                     <label for="category-description" class="form-label">Mô tả danh mục</label>
                     <input type="text" class="form-control" id="category-description" name="category-description"">
