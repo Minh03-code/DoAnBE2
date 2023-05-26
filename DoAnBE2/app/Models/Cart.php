@@ -17,4 +17,12 @@ class Cart extends Model
         return $result;
     }
     // End 7
+
+    //Start function 12
+    public static function getItemsInCartTableByAccountID($account_id)
+    {
+        $result = self::where('account_id', '=', $account_id)->get();
+        return $result;
+    }
+    //End function 12
 }
