@@ -35,18 +35,20 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach($mangSpYeuThich as $item)
                                 <tr>
                                     <td class="shoping__cart__item">
-                                        <img src="img/cart/cart-1.jpg" alt="">
-                                        <h5>Bánh mè Dũng mập</h5>
+                                        <img src="img/cart/{{$item->image}}" alt="" style="width:100px;height:100px;">
+                                        <h5>{{$item->name}}</h5>
                                     </td>
                                     <td class="shoping__cart__price">
-                                        15000 vnđ
+                                        {{$item->price}} vnđ
                                     </td>
                                     <td class="shoping__cart__item__close">
                                         <span class="icon_close"></span>
                                     </td>
                                 </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

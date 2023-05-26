@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CustomerController\LikePageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -35,9 +36,9 @@ Route::get('contact', function () {
 Route::get('checkout', function () {
     return view('CustomerInterface/checkout');
 })->name('checkout'); 
-Route::get('like', function () {
-    return view('CustomerInterface/like');
-})->name('like'); 
+
+Route::get('like', [LikePageController::class,'likePage'])->name('like'); 
+
 Route::get('form-profile', function () {
     return view('CustomerInterface/form-profile');
 })->name('form-profile'); 
