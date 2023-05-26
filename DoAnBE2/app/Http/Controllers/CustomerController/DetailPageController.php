@@ -12,7 +12,8 @@ class DetailPageController extends MainCustomerController
     public function show(Request $request)
     {
         $sanpham = Product::getProductByID($request->id);
-        return view('CustomerInterface/shop-details',['sanpham'=>$sanpham]);
+        $sanphamlienquan = Product::getProductsByCategoryNumberLimit(4,$sanpham['category_id']);
+        return view('CustomerInterface/shop-details',['sanpham'=>$sanpham,'sanphamlienquan'=>$sanphamlienquan]);
     }
     // End func detail v1.0
 }
