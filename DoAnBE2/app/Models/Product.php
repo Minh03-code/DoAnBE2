@@ -10,13 +10,22 @@ class Product extends Model
     use HasFactory;
     protected $table = 'products';
 
-
     //Start 3
     public static function getProductsByCategoryNumberLimit($gioiHan)
     {
         return self::offset(0)->limit($gioiHan)->get();
     }
     //End 3
+
+    //Start func 10 v.0
+    public static function getPaginationProductsByCategoryID($category_id, $pagination)
+    {
+        $result = self::where('category_id', $category_id)->paginate($pagination);
+
+        return $result;
+    }
+    //End func 10 v.0
+
 }
 
     
@@ -31,4 +40,4 @@ class Product extends Model
         return $mangSPYeuThich;
     }
 }
- function/6-GetAllProductsLikedByAccountID
+ 
