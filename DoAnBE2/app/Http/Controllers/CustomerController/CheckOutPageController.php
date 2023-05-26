@@ -5,7 +5,7 @@ namespace App\Http\Controllers\CustomerController;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class CheckOutPageController extends Controller
+class CheckOutPageController extends MainCustomerController
 {
     //
 }

@@ -5,7 +5,7 @@ namespace App\Http\Controllers\AdminController;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class BillManagementPageController extends Controller
+class BillManagementPageController extends MainAdminController
 {
     //
 }

@@ -5,7 +5,7 @@ namespace App\Http\Controllers\CustomerController;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class LikePageController extends Controller
+class LikePageController extends MainCustomerController
 {
     //
 }

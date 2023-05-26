@@ -5,7 +5,7 @@ namespace App\Http\Controllers\CustomerController;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class ChangePasswordCustomerPageController extends Controller
+class ChangePasswordCustomerPageController extends MainCustomerController
 {
     //
 }
