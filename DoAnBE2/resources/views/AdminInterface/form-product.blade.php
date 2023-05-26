@@ -36,8 +36,7 @@
                             @endforeach
                         </select>
                     </div>
-                    <button type="submit" class="btn btn-primary">Ở đây hiển thị là chữ thêm nếu đường dẫn là add-product
-                        hoặc là chữ chỉnh sửa nếu đường dẫn là edit-product nếu làm biếng thì để là OK</button>
+                    <button type="submit" class="btn btn-primary">Sửa Món Ăn</button>
                 </form>
             </div>
 
@@ -77,8 +76,7 @@
                             <option value="2">Món Khô</option>
                         </select>
                     </div>
-                    <button type="submit" class="btn btn-primary">Ở đây hiển thị là chữ thêm nếu đường dẫn là add-product
-                        hoặc là chữ chỉnh sửa nếu đường dẫn là edit-product nếu làm biếng thì để là OK</button>
+                    <button type="submit" class="btn btn-primary">Thêm Món</button>
                 </form>
             </div>
 
