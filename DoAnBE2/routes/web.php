@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController\AccountManagementPageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -71,9 +72,10 @@ Route::group(['prefix'=>'admin','as'=>'admin.'], function(){
     Route::get('/bill-management', function () {
         return view('AdminInterface/bill-management');
     })->name('bill-management');
-    Route::get('/account-management', function () {
-        return view('AdminInterface/account-management');
-    })->name('account-management');
+    
+    //Start account-management
+    Route::get('/account-management', [AccountManagementPageController::class, 'getPaginationAccount'])->name('account-management');
+    
     Route::get('/add-product', function () {
         return view('AdminInterface/form-product');
     })->name('add-product');
