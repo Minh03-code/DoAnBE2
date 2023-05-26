@@ -49,19 +49,5 @@ class Product extends Model
         }
         return $mangSPYeuThich;
     }
-
-    //Start function 9
-    public static function getPaginationProducts($numberOfPage)
-    {
-        return self::paginate($numberOfPage);
-    }
-    //End function 9
-
-    //Start function 1
-    public static function getProductsBySearchKeyword($keyword){
-        $result = self::where('name', 'like', '%'.$keyword.'%' )->get();
-
-        return $result;
-    }
-    //End function 1
 }
+ 
