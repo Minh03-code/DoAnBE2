@@ -15,4 +15,9 @@ class Category extends Model
 
         return $result;
     }
+    public static function getAllCategory(){
+        $category = self::all();
+
+        return $category;
+    }
 }
