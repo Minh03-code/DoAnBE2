@@ -56,5 +56,12 @@ class Product extends Model
         return self::paginate($numberOfPage);
     }
     //End function 9
+
+    //Start function 1
+    public static function getProductsBySearchKeyword($keyword){
+        $result = self::where('name', 'like', '%'.$keyword.'%' )->get();
+
+        return $result;
+    }
+    //End function 1
 }
- 
