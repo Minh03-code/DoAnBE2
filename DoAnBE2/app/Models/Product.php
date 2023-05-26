@@ -12,9 +12,9 @@ class Product extends Model
 
 
     //Start 3
-    public static function getProductsByCategoryNumberLimit($gioiHan)
+    public static function getProductsByCategoryNumberLimit($gioiHan,$categoryId)
     {
-        return self::offset(0)->limit($gioiHan)->get();
+        return self::where('category_id',$categoryId)->offset(0)->limit($gioiHan)->get();
     }
     //End 3
 
@@ -64,4 +64,11 @@ class Product extends Model
         return $result;
     }
     //End function 1
+    
+    //Start func 17
+    public static function getProductByNumberLimit($gioiHan)
+    {
+        return self::offset(0)->limit($gioiHan)->get();
+    }
+    //End func 17
 }
