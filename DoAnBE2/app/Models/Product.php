@@ -49,5 +49,12 @@ class Product extends Model
         }
         return $mangSPYeuThich;
     }
+
+    //Start function 9
+    public static function getPaginationProducts($numberOfPage)
+    {
+        return self::paginate($numberOfPage);
+    }
+    //End function 9
 }
  
