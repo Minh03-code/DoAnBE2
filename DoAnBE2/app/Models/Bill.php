@@ -23,4 +23,12 @@ class Bill extends Model
         }
         return $result;
     }
+
+    // start 15
+    public static function getPaginationBills($pagination){
+        $result = self::paginate($pagination);
+
+        return $result;
+    }
+    // end 15
 }
