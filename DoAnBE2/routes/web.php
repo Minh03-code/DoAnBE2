@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController\ProductManagementPageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -77,9 +78,9 @@ Route::group(['prefix'=>'admin','as'=>'admin.'], function(){
     Route::get('/add-product', function () {
         return view('AdminInterface/form-product');
     })->name('add-product');
-    Route::get('/edit-product', function () {
-        return view('AdminInterface/form-product');
-    })->name('edit-product');
+
+    Route::get('/edit-product', [ProductManagementPageController::class,'editProduct'])->name('edit-product');
+
     Route::get('/add-category', function () {
         return view('AdminInterface/form-category');
     })->name('add-category');
