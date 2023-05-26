@@ -8,8 +8,8 @@ use App\Models\Category;
 
 class CategoryManagementPageController extends MainAdminController
 {
-    public function edit_category(){
-        $category = Category::find(1);
+    public function edit_category(Request $request){
+        $category = Category::find($request->id);
         return view('AdminInterface/form-category',['category'=>$category]);
     }
 }
