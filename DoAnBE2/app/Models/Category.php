@@ -9,4 +9,10 @@ class Category extends Model
 {
     use HasFactory;
     protected $table = 'categories';
+
+    public static function getPaginationCategories($pagination){
+        $result = self::paginate($pagination);
+
+        return $result;
+    }
 }
