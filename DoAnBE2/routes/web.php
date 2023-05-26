@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CustomerController\DetailPageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,9 +24,7 @@ Route::get('/home', function () {
 Route::get('shop', function () {
     return view('CustomerInterface/shop-grid');
 })->name('shop'); 
-Route::get('detail', function () {
-    return view('CustomerInterface/shop-details');
-})->name('detail'); 
+Route::get('detail', [DetailPageController::class,'show'])->name('detail'); 
 Route::get('cart', function () {
     return view('CustomerInterface/shoping-cart');
 })->name('cart'); 
