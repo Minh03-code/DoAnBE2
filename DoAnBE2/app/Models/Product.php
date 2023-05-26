@@ -10,6 +10,7 @@ class Product extends Model
     use HasFactory;
     protected $table = 'products';
 
+
     //Start 3
     public static function getProductsByCategoryNumberLimit($gioiHan)
     {
@@ -26,7 +27,16 @@ class Product extends Model
     }
     //End func 10 v.0
 
-}
+
+    //Start func 11 v1.0
+    public static function getProductByID($id)
+    {
+        $sanpham = Product::find($id);
+        return $sanpham;
+    }
+    //End func 11 v1.0
+ 
+
 
     
 
