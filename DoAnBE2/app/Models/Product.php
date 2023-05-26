@@ -11,9 +11,9 @@ class Product extends Model
     protected $table = 'products';
 
     //Start 3
-    public static function getProductsByCategoryNumberLimit($gioiHan)
+    public static function getProductsByCategoryNumberLimit($gioiHan,$categoryId)
     {
-        return self::offset(0)->limit($gioiHan)->get();
+        return self::where('category_id',$categoryId)->offset(0)->limit($gioiHan)->get();
     }
     //End 3
 }
