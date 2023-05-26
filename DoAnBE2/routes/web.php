@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController\CategoryManagementPageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -65,9 +66,7 @@ Route::group(['prefix'=>'admin','as'=>'admin.'], function(){
     Route::get('/product-management', function () {
         return view('AdminInterface/product-management');
     })->name('product-management');
-    Route::get('/category-management', function () {
-        return view('AdminInterface/category-management');
-    })->name('category-management');
+    Route::get('/category-management', [CategoryManagementPageController::class, 'showCategory'])->name('category-management');
     Route::get('/bill-management', function () {
         return view('AdminInterface/bill-management');
     })->name('bill-management');
