@@ -9,4 +9,10 @@ class Product extends Model
 {
     use HasFactory;
     protected $table = 'products';
+    public static function getProductByID($id)
+    {
+        $sanpham = Product::find($id);
+        return $sanpham;
+    }
+
 }
