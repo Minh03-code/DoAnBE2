@@ -9,4 +9,11 @@ class Product extends Model
 {
     use HasFactory;
     protected $table = 'products';
+
+    //Start function 9
+    public static function getPaginationProducts($numberOfPage)
+    {
+        return self::paginate($numberOfPage);
+    }
+    //End function 9
 }
