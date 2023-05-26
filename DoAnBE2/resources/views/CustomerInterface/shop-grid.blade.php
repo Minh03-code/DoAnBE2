@@ -29,7 +29,7 @@
                             <h4>Danh mục</h4>
                             @foreach ($listCategory as $listC)
                             <ul>
-                                <li><a href="{{route('shop-category')}}">{{$listC->name}}</a></li>
+                                <li><a href="{{route('shop-category',["category_id"=>$listC->id])}}">{{$listC->name}}</a></li>
                             </ul>
                             @endforeach
                         </div>

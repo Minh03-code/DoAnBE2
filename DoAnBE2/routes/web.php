@@ -23,10 +23,8 @@ Route::get('/home', function () {
 })->name('home');
  //Start func shop-page
 Route::get('shop', [ShopPageController::class,'show'])->name('shop'); 
+Route::get('shop-category',[ShopPageController::class,'showProductByCategory'])->name('shop-category'); 
  //Start func shop-page
-Route::get('shop-category', function () {
-    return view('CustomerInterface/shop');
-})->name('shop-category'); 
 Route::get('detail', function () {
     return view('CustomerInterface/shop-details');
 })->name('detail'); 

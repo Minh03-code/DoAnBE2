@@ -16,6 +16,12 @@ class ShopPageController extends MainCustomerController
         $listCategory = Category::getAllCategory();
         return view('CustomerInterface/shop-grid',['listProduct'=>$listProduct, 'listCategory'=>$listCategory]);
     }
+    public function showProductByCategory(Request $request)
+    {
+        $listProduct = Product::getPaginationProductsByCategoryID($request->category_id,9);
+        $listCategory = Category::getAllCategory();
+        return view('CustomerInterface/shop-grid',['listProduct'=>$listProduct, 'listCategory'=>$listCategory]);
+    }
      //End func shop-page
 
 }
