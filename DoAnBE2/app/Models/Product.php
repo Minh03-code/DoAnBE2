@@ -9,4 +9,10 @@ class Product extends Model
 {
     use HasFactory;
     protected $table = 'products';
+
+    public static function getProductsBySearchKeyword($keyword){
+        $result = self::where('name', 'like', '%'.$keyword.'%' )->get();
+
+        return $result;
+    }
 }
