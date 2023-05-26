@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\CustomerController\ContactPageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,9 +31,9 @@ Route::get('detail', function () {
 Route::get('cart', function () {
     return view('CustomerInterface/shoping-cart');
 })->name('cart'); 
-Route::get('contact', function () {
-    return view('CustomerInterface/contact');
-})->name('contact'); 
+//Start func contact
+Route::get('contact',[ContactPageController::class, 'show'])->name('contact'); 
+//End func contact
 Route::get('checkout', function () {
     return view('CustomerInterface/checkout');
 })->name('checkout'); 
