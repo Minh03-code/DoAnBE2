@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController\CategoryManagementPageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -83,9 +84,9 @@ Route::group(['prefix'=>'admin','as'=>'admin.'], function(){
     Route::get('/add-category', function () {
         return view('AdminInterface/form-category');
     })->name('add-category');
-    Route::get('/edit-category', function () {
-        return view('AdminInterface/form-category');
-    })->name('edit-category');
+
+    Route::get('/edit-category', [CategoryManagementPageController::class, 'edit_category'])->name('edit-category');
+
     Route::get('/form-profile', function () {
         return view('AdminInterface/form-profile');
     })->name('form-profile');

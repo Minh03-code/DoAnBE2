@@ -10,12 +10,12 @@
                     <input type="hidden" name="category-id"> {{-- Nếu là sửa thì phải có id để sửa --}}
                     <div class="mb-3">
                         <label for="category-name" class="form-label">Tên danh mục</label>
-                        <input type="text" class="form-control" id="category-name" name="category-name">
+                        <input type="text" class="form-control" id="category-name" name="category-name" value="{{$category->name}}">
                     </div>
 
                     <div class="mb-3">
                         <label for="category-description" class="form-label">Mô tả danh mục</label>
-                        <input type="text" class="form-control" id="category-description" name="category-description">
+                        <input type="text" class="form-control" id="category-description" name="category-description" value="{{$category->description}}">
                     </div>
 
                     <button type="submit" class="btn btn-primary">Ở đây hiển thị là chữ thêm nếu đường dẫn là add-category
