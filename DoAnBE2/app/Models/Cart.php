@@ -9,4 +9,12 @@ class Cart extends Model
 {
     use HasFactory;
     protected $table = 'carts';
+
+    // Start 7
+    public static function countProductsAddToCartByAccountID($account_id){
+        $result = self::where('account_id', $account_id)->count();
+
+        return $result;
+    }
+    // End 7
 }
