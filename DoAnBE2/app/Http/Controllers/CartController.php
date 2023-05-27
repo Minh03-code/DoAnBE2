@@ -7,9 +7,9 @@ use Illuminate\Http\Request;
 
 class CartController extends Controller
 {
-    public function getItemsInCartTableByAccountID(Request $request)
+    public function getItemsInCartTableByAccountID()
     {
-        $result = Cart::getItemsInCartTableByAccountID(1);
+        $result = Cart::getItemsInCartTableByAccountID(session('account'));
         return view('CustomerInterface.checkout', ["listProductOfAccount" => $result]);
     }
 }
