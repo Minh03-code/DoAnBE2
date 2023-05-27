@@ -20,6 +20,7 @@
     </section>
     <!-- Breadcrumb Section End -->
 {{-- Start func  shop-page --}}
+
     <section class="product spad">
         <div class="container">
             <div class="row">
@@ -43,7 +44,6 @@
                                 <div class="product__item__pic set-bg" data-setbg="img/product/product-1.jpg">
                                     <ul class="product__item__pic__hover">
                                         <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-retweet"></i></a></li>
                                         <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
                                     </ul>
                                 </div>
@@ -55,7 +55,20 @@
                         </div>
                          @endforeach
                     </div>
+                    {{-- Kiểm tra xem có tồn tại session categoryId hay không
+                        Câu lệnh Session::has('categoryId') để truy xuất session trong html --}}
+                    @if(Session::has('categoryId'))
+                    {{-- Session::get('categoryId') dùng để truy xuất đến dữ liệu session --}}
+                    {{$listProduct->appends(['category_id' => Session::get('categoryId')])->links('pagination::bootstrap-5')}}
+                    @else
                     {{$listProduct->links('pagination::bootstrap-5')}}
+                    @endif
+                    @if(Session::has('categoryId'))
+                   {{
+                    // Câu lệnh này dùng để xóa session trong html
+                        Session::forget('categoryId')
+                   }}
+                   @endif
                 </div>
             </div>
         </div>
