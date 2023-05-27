@@ -58,14 +58,21 @@
                         <div class="col-lg-4 col-md-6">
                             <div class="checkout__order">
                                 <h4>Đơn đặt hàng của bạn</h4>
+                                @php
+                                    $total = 0;
+                                @endphp
                                 <div class="checkout__order__products">Products <span>Total</span></div>
                                 <ul>
-                                    <li>Sản phẩm 1 <span>Giá</span></li>
-                                    <li>Fresh Vegetable <span>$151.99</span></li>
-                                    <li>Organic Bananas <span>$53.99</span></li>
+                                    {{-- <li>Sản phẩm 1 <span>Giá</span></li> --}}
+                                    @foreach ($listProductOfAccount as $item)
+                                        <li>{{$item->product_name}}<span>${{$item->product_price * $item->quantity}}</span></li>
+                                        @php
+                                            $total += $item->product_price * $item->quantity;
+                                        @endphp
+                                    @endforeach
                                 </ul>
-                                <div class="checkout__order__subtotal">Subtotal <span>$750.99</span></div>
-                                <div class="checkout__order__total">Total <span>$750.99</span></div>
+                                <div class="checkout__order__subtotal">Subtotal <span>${{$total}}</span></div>
+                                <div class="checkout__order__total">Total <span>${{$total}}</span></div>
                                 <div class="checkout__input__checkbox">
                                     <label for="payment-online">
                                         Thanh toán online
