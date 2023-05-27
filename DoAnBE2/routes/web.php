@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SearchController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -37,7 +38,10 @@ Route::get('checkout', function () {
 })->name('checkout'); 
 Route::get('like', function () {
     return view('CustomerInterface/like');
-})->name('like'); 
+})->name('like');
+
+Route::get('search',[SearchController::class,'ResultSearchOnShopPage'] )->name('search'); 
+
 Route::get('form-profile', function () {
     return view('CustomerInterface/form-profile');
 })->name('form-profile'); 
