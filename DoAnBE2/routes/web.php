@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CustomerController\ProfileCustomerPageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -38,9 +39,7 @@ Route::get('checkout', function () {
 Route::get('like', function () {
     return view('CustomerInterface/like');
 })->name('like'); 
-Route::get('form-profile', function () {
-    return view('CustomerInterface/form-profile');
-})->name('form-profile'); 
+Route::get('form-profile',[ProfileCustomerPageController::class,'edit_profile'])->name('form-profile'); 
 Route::get('change-password', function () {
     return view('CustomerInterface/change-password');
 })->name('change-password'); 
