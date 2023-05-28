@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\CustomerController\CartPageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,7 +29,7 @@ Route::get('detail', function () {
     return view('CustomerInterface/shop-details');
 })->name('detail'); 
 
-Route::get('cart', [CartController::class, 'getItemsInCartTableByAccountID'])->name('cart');
+Route::get('cart', [CartPageController::class, 'getItemsInCartTableByAccountID'])->name('cart');
 
 Route::get('contact', function () {
     return view('CustomerInterface/contact');
