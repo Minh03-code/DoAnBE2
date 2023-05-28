@@ -1,6 +1,5 @@
 <?php
 
-
 use App\Http\Controllers\CustomerController\HomePageController;
 use App\Http\Controllers\CustomerController\ShopPageController;
 use App\Http\Controllers\SearchController;
@@ -16,6 +15,7 @@ use App\Http\Controllers\AdminController\ProductManagementPageController;
 use App\Http\Controllers\AdminController\CategoryManagementPageController;
 use App\Http\Controllers\AdminController\BillManagementPageController;
 use App\Http\Controllers\AdminController\AccountManagementPageController;
+use App\Http\Controllers\AdminController\ContactManagementPageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -111,8 +111,6 @@ Route::group(['prefix'=>'admin','as'=>'admin.'], function(){
     Route::get('/change-password', function () {
         return view('AdminInterface/change-password');
     })->name('change-password');
-    Route::get('/contact-management', function () {
-        return view('AdminInterface/form-contact');
-    })->name('contact-management');
+    Route::get('/contact-management',[ContactManagementPageController::class,'show'])->name('contact-management');
 });
 

@@ -8,23 +8,23 @@
                 <form action="#" method="POST">
                     <div class="mb-3">
                         <label for="logo-web" class="form-label">Logo</label>
-                        <input type="text" class="form-control" id="logo-web" name="logo">
+                        <input type="text" class="form-control" id="logo-web" name="logo" value="{{$contact->logo}}">
                     </div>
                     <div class="mb-3">
                         <label for="address" class="form-label">Địa chỉ</label>
-                        <input type="text" class="form-control" id="address" name="address">
+                        <input type="text" class="form-control" id="address" name="address" value="{{$contact->address}}">
                     </div>
                     <div class="mb-3">
                         <label for="open-time" class="form-label">Thời gian mở cửa</label>
-                        <input type="text" class="form-control" id="open-time" name="open-time">
+                        <input type="text" class="form-control" id="open-time" name="open-time" value="{{$contact->open_time}}">
                     </div>
                     <div class="mb-3">
                         <label for="close-time" class="form-label">Thời gian đóng cửa</label>
-                        <input type="text" class="form-control" id="close-time" name="close-time">
+                        <input type="text" class="form-control" id="close-time" name="close-time" value="{{$contact->clone_time}}">
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label">Email</label>
-                        <input type="text" class="form-control" id="email" name="email">
+                        <input type="text" class="form-control" id="email" name="email" value="{{$contact->email}}">
                     </div>
                     <div class="mb-3">
                         <label for="image-banner-web" class="form-label">Chọn ảnh banner</label>
