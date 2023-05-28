@@ -1,5 +1,6 @@
 <?php
 
+
 use App\Http\Controllers\CustomerController\HomePageController;
 use App\Http\Controllers\CustomerController\ShopPageController;
 use App\Http\Controllers\SearchController;
@@ -14,6 +15,7 @@ use App\Http\Controllers\CustomerController\LikePageController;
 use App\Http\Controllers\AdminController\ProductManagementPageController;
 use App\Http\Controllers\AdminController\CategoryManagementPageController;
 use App\Http\Controllers\AdminController\BillManagementPageController;
+use App\Http\Controllers\AdminController\AccountManagementPageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -83,14 +85,14 @@ Route::group(['prefix'=>'admin','as'=>'admin.'], function(){
         return view('AdminInterface/product-management');
     })->name('product-management');
 
+
     //Start Product-Management
     Route::get('/product-management', [ProductManagementPageController::class, 'getPaginationProducts'])->name('product-management');
     Route::get('/category-management', [CategoryManagementPageController::class, 'showCategory'])->name('category-management');
     Route::get('/bill-management', [BillManagementPageController::class, 'showBill'])->name('bill-management');
+    //Start account-management
+    Route::get('/account-management', [AccountManagementPageController::class, 'getPaginationAccount'])->name('account-management');
 
-    Route::get('/account-management', function () {
-        return view('AdminInterface/account-management');
-    })->name('account-management');
     Route::get('/add-product', function () {
         return view('AdminInterface/form-product');
     })->name('add-product');
