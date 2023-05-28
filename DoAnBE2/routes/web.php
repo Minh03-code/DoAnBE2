@@ -3,6 +3,7 @@
 use App\Http\Controllers\CustomerController\HomePageController;
 use App\Http\Controllers\CustomerController\ShopPageController;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\CustomerController\DetailPageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,9 +28,10 @@ Route::get('shop', [ShopPageController::class,'show'])->name('shop');
 Route::get('shop-category',[ShopPageController::class,'showProductByCategory'])->name('shop-category'); 
  //Start func shop-page
 
-Route::get('detail', function () {
-    return view('CustomerInterface/shop-details');
-})->name('detail'); 
+// Start func detail v1.0
+Route::get('detail', [DetailPageController::class,'show'])->name('detail'); 
+// Start func detail v1.0
+
 Route::get('cart', function () {
     return view('CustomerInterface/shoping-cart');
 })->name('cart'); 
