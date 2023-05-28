@@ -16,6 +16,7 @@ use App\Http\Controllers\AdminController\CategoryManagementPageController;
 use App\Http\Controllers\AdminController\BillManagementPageController;
 use App\Http\Controllers\AdminController\AccountManagementPageController;
 use App\Http\Controllers\AdminController\ContactManagementPageController;
+use App\Http\Controllers\CustomerController\ProfileCustomerPageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -62,9 +63,8 @@ Route::get('search',[SearchController::class,'ResultSearchOnShopPage'] )->name('
 Route::get('like', [LikePageController::class,'likePage'])->name('like'); 
 
 
-Route::get('form-profile', function () {
-    return view('CustomerInterface/form-profile');
-})->name('form-profile'); 
+Route::get('form-profile',[ProfileCustomerPageController::class,'edit_profile'])->name('form-profile'); 
+
 Route::get('change-password', function () {
     return view('CustomerInterface/change-password');
 })->name('change-password'); 
