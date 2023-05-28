@@ -17,8 +17,8 @@
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th class="d-none d-xl-table-cell">Tên tài khoản</th>
                             <th class="d-none d-xl-table-cell">Tên khách hàng</th>
+                            <th class="d-none d-xl-table-cell">Email</th>
                             <th class="d-none d-xl-table-cell">Địa chỉ nhận hàng</th>
                             <th class="d-none d-xl-table-cell">Số điện thoại</th>
                             <th>Trạng thái</th>
@@ -27,25 +27,34 @@
                     </thead>
                     <tbody>
                         <!-- Hiển thị sản phẩm -->
+                        @foreach ($listBills as $bill)
                         <tr>
-                            <td>#1111</td>
-                            <td class="d-none d-xl-table-cell">tkkh1</td>
-                            <td class="d-none d-xl-table-cell">Nguyễn Tấn Dũng</td>
-                            <td class="d-none d-xl-table-cell">Địa chỉ nhận hàng Địa chỉ nhận hàng Địa chỉ nhận hàng Địa chỉ nhận hàng</td>
-                            <td class="d-none d-xl-table-cell">0123456789</td>
+                            <td>#{{$bill->id}}</td>
+                            <td class="d-none d-xl-table-cell">{{ $bill->name}}</td>
+                            <td class="d-none d-xl-table-cell">{{ $bill->email}}</td>
+                            <td class="d-none d-xl-table-cell">{{ $bill->address}}</td>
+                            <td class="d-none d-xl-table-cell">{{ $bill->phone_number}}</td>
                             <td>
-                                <a href="#" class="btn btn-danger">Đã giao</a>
+                                @if ($bill->status == 0)
                                 <a href="#" class="btn btn-success">chưa giao</a>
+                                
+                                @else
+                                <a href="#" class="btn btn-danger">Đã giao</a>
+                                @endif
+                                
+                                
                             </td>
                             <td class="d-none d-md-table-cell">
                                 <a href="#" class="btn btn-primary">Hủy</a>
                             </td>
                         </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
 
 
+            {{$listBills->links('pagination::bootstrap-5')}}
         </div>
     </main>
 @endsection
