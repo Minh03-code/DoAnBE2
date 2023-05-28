@@ -10,6 +10,7 @@ use App\Http\Controllers\CustomerController\CheckOutPageController;
 use App\Http\Controllers\CustomerController\BillHistoryPageController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CustomerController\ContactPageController;
+use App\Http\Controllers\CustomerController\LikePageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,6 +25,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 // Customer intrface
+
 
 Route::get('/', [HomePageController::class,'homePage'])->name('home');
 
@@ -48,11 +50,12 @@ Route::get('contact',[ContactPageController::class, 'show'])->name('contact');
 //checkout
 Route::get('checkout', [CheckOutPageController::class, 'getItemsInCartTableByAccountID'])->name('checkout'); 
 
-Route::get('like', function () {
-    return view('CustomerInterface/like');
-})->name('like');
 
 Route::get('search',[SearchController::class,'ResultSearchOnShopPage'] )->name('search'); 
+
+
+Route::get('like', [LikePageController::class,'likePage'])->name('like'); 
+
 
 Route::get('form-profile', function () {
     return view('CustomerInterface/form-profile');
