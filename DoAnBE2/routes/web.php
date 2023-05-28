@@ -4,6 +4,7 @@ use App\Http\Controllers\CustomerController\HomePageController;
 use App\Http\Controllers\CustomerController\ShopPageController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\CustomerController\DetailPageController;
+use App\Http\Controllers\CartController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,9 +33,8 @@ Route::get('shop-category',[ShopPageController::class,'showProductByCategory'])-
 Route::get('detail', [DetailPageController::class,'show'])->name('detail'); 
 // Start func detail v1.0
 
-Route::get('cart', function () {
-    return view('CustomerInterface/shoping-cart');
-})->name('cart'); 
+Route::get('cart', [CartController::class, 'getItemsInCartTableByAccountID'])->name('cart');
+
 Route::get('contact', function () {
     return view('CustomerInterface/contact');
 })->name('contact'); 

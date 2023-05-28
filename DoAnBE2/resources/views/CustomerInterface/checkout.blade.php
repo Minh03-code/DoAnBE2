@@ -79,8 +79,8 @@
                                         <input type="checkbox" id="payment-offline">
                                         <span class="checkmark"></span>
                                     </label>
+                                    <a href="{{ route('bill-history') }}" class="primary-btn">ĐẶT HÀNG</a>
                                 </div>
-                                <button type="submit" class="site-btn">ĐẶT HÀNG</button>
                             </div>
                         </div>
                     </div>
