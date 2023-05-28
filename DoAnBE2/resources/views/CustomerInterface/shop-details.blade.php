@@ -1,3 +1,6 @@
+@php
+use App\Models\ProductLike;
+@endphp
 @extends('CustomerInterface/main')
 
 @section('content')
@@ -29,17 +32,7 @@
                     <div class="product__details__pic">
                         <div class="product__details__pic__item">
                             <img class="product__details__pic__item--large"
-                                src="img/product/details/product-details-1.jpg" alt="">
-                        </div>
-                        <div class="product__details__pic__slider owl-carousel">
-                            <img data-imgbigurl="img/product/details/product-details-2.jpg"
-                                src="img/product/details/thumb-1.jpg" alt="">
-                            <img data-imgbigurl="img/product/details/product-details-3.jpg"
-                                src="img/product/details/thumb-2.jpg" alt="">
-                            <img data-imgbigurl="img/product/details/product-details-5.jpg"
-                                src="img/product/details/thumb-3.jpg" alt="">
-                            <img data-imgbigurl="img/product/details/product-details-4.jpg"
-                                src="img/product/details/thumb-4.jpg" alt="">
+                                src="{{asset('img/product/details/'.$sanpham->image)}}" alt="">
                         </div>
                     </div>
                 </div>
@@ -73,6 +66,8 @@
                                 <div class="product__details__tab__desc">
                                     <h6>Mô tả :  {{$sanpham->name}}</h6>
                                     <p>{{$sanpham->description}}</p>
+                                    <h6>Lượt thích: {{ ProductLike::countLikeByProductID($sanpham->id) }}</h6>
+                               
                                 </div>
                             </div>
                         </div>
@@ -108,6 +103,8 @@
                         <div class="product__item__text">
                             <h6><a href="{{ route('detail', ["id"=>$splq->id])}}">{{$splq->name}}</a></h6>
                             <h5>${{$splq->price}}</h5>
+                            <h6>Lượt thích: {{ ProductLike::countLikeByProductID($splq->id) }}</h6>
+                               
                         </div>
                     </div>
                 </div>

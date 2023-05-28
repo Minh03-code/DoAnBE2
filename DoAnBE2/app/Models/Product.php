@@ -50,6 +50,7 @@ class Product extends Model
         return $mangSPYeuThich;
     }
 
+
     //Start function 9
     public static function getPaginationProducts($numberOfPage)
     {
@@ -71,4 +72,6 @@ class Product extends Model
         return self::offset(0)->limit($gioiHan)->get();
     }
     //End func 17
+
 }
+ 
