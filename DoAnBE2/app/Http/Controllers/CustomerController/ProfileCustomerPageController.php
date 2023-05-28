@@ -9,7 +9,7 @@ use App\Models\Profile;
 class ProfileCustomerPageController extends MainCustomerController
 {
     public function edit_profile(){
-        $profile = Profile::find(1);
+        $profile = Profile::getProfileByAccountID(1);
 
         return view('CustomerInterface/form-profile',['profile' => $profile]);
     }
