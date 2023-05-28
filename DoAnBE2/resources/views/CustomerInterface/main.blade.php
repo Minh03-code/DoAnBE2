@@ -186,9 +186,9 @@
                 <div class="col-lg-9">
                     <div class="hero__search">
                         <div class="hero__search__form">
-                            <form action="#" method="GET">
-                                <input type="text" placeholder="Bạn cần tìm gì gì?">
-                                <button type="submit" class="site-btn">Tìm</button>
+                            <form action="{{ route('search') }}" method="GET">
+                                <input type="text" placeholder="Bạn cần tìm gì gì?" name="search">
+                                <button type="submit"  class="site-btn">Tìm</button>
                             </form>
                         </div>
                         <div class="hero__search__phone">
