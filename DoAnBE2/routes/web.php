@@ -12,6 +12,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CustomerController\ContactPageController;
 use App\Http\Controllers\CustomerController\LikePageController;
 use App\Http\Controllers\AdminController\ProductManagementPageController;
+use App\Http\Controllers\AdminController\CategoryManagementPageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -83,10 +84,8 @@ Route::group(['prefix'=>'admin','as'=>'admin.'], function(){
 
     //Start Product-Management
     Route::get('/product-management', [ProductManagementPageController::class, 'getPaginationProducts'])->name('product-management');
-    
-    Route::get('/category-management', function () {
-        return view('AdminInterface/category-management');
-    })->name('category-management');
+    Route::get('/category-management', [CategoryManagementPageController::class, 'showCategory'])->name('category-management');
+
     Route::get('/bill-management', function () {
         return view('AdminInterface/bill-management');
     })->name('bill-management');
