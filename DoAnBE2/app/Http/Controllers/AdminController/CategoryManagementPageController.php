@@ -5,7 +5,7 @@ namespace App\Http\Controllers\AdminController;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use Illuminate\Http\Request;
-use App\Models\Category;
+
 
 class CategoryManagementPageController extends MainAdminController
 {
