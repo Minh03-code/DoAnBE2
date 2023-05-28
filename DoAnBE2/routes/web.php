@@ -8,6 +8,8 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\CustomerController\CartPageController;
 use App\Http\Controllers\CustomerController\CheckOutPageController;
 use App\Http\Controllers\CustomerController\BillHistoryPageController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\CustomerController\ContactPageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,6 +24,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 // Customer intrface
+
 Route::get('/', [HomePageController::class,'homePage'])->name('home');
 
 Route::get('/home', [HomePageController::class,'homePage']
@@ -38,9 +41,9 @@ Route::get('detail', [DetailPageController::class,'show'])->name('detail');
 
 Route::get('cart', [CartPageController::class, 'getItemsInCartTableByAccountID'])->name('cart');
 
-Route::get('contact', function () {
-    return view('CustomerInterface/contact');
-})->name('contact'); 
+//Start func contact
+Route::get('contact',[ContactPageController::class, 'show'])->name('contact'); 
+//End func contact
 
 //checkout
 Route::get('checkout', [CheckOutPageController::class, 'getItemsInCartTableByAccountID'])->name('checkout'); 
