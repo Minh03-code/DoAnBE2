@@ -7,7 +7,7 @@ use App\Http\Controllers\CustomerController\DetailPageController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CustomerController\CartPageController;
 use App\Http\Controllers\CustomerController\CheckOutPageController;
-
+use App\Http\Controllers\CustomerController\BillHistoryPageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -57,9 +57,7 @@ Route::get('form-profile', function () {
 Route::get('change-password', function () {
     return view('CustomerInterface/change-password');
 })->name('change-password'); 
-Route::get('bill-history', function () {
-    return view('CustomerInterface/bill-history');
-})->name('bill-history'); 
+Route::get('bill-history', [BillHistoryPageController::class, 'showBill'])->name('bill-history'); 
 
 // Login Register
 Route::get('login', function () {
