@@ -17,6 +17,7 @@ use App\Http\Controllers\AdminController\BillManagementPageController;
 use App\Http\Controllers\AdminController\AccountManagementPageController;
 use App\Http\Controllers\AdminController\ContactManagementPageController;
 use App\Http\Controllers\CustomerController\ProfileCustomerPageController;
+use App\Http\Controllers\AdminController\ProfileAdminController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -104,10 +105,8 @@ Route::group(['prefix'=>'admin','as'=>'admin.'], function(){
     })->name('add-category');
 
     Route::get('/edit-category', [CategoryManagementPageController::class, 'showCategoryForEditPage'])->name('edit-category');
+    Route::get('/form-profile', [ProfileAdminController::class, 'show'])->name('form-profile');
 
-    Route::get('/form-profile', function () {
-        return view('AdminInterface/form-profile');
-    })->name('form-profile');
     Route::get('/change-password', function () {
         return view('AdminInterface/change-password');
     })->name('change-password');
