@@ -6,6 +6,8 @@ use App\Http\Controllers\SearchController;
 use App\Http\Controllers\CustomerController\DetailPageController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CustomerController\CartPageController;
+use App\Http\Controllers\CustomerController\CheckOutPageController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -39,9 +41,10 @@ Route::get('cart', [CartPageController::class, 'getItemsInCartTableByAccountID']
 Route::get('contact', function () {
     return view('CustomerInterface/contact');
 })->name('contact'); 
-Route::get('checkout', function () {
-    return view('CustomerInterface/checkout');
-})->name('checkout'); 
+
+//checkout
+Route::get('checkout', [CheckOutPageController::class, 'getItemsInCartTableByAccountID'])->name('checkout'); 
+
 Route::get('like', function () {
     return view('CustomerInterface/like');
 })->name('like');
