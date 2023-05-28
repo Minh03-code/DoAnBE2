@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CustomerController\HomePageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,9 +18,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('CustomerInterface/index');
 })->name('home');
-Route::get('/home', function () {
-    return view('CustomerInterface/index');
-})->name('home');
+
+Route::get('/home', [HomePageController::class,'homePage']
+)->name('home');
+
 Route::get('shop', function () {
     return view('CustomerInterface/shop-grid');
 })->name('shop'); 
