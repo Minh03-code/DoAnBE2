@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\CustomerController\CheckOutPageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -35,7 +36,7 @@ Route::get('contact', function () {
 })->name('contact'); 
 
 //checkout
-Route::get('checkout', [CartController::class, 'getItemsInCartTableByAccountID'])->name('checkout'); 
+Route::get('checkout', [CheckOutPageController::class, 'getItemsInCartTableByAccountID'])->name('checkout'); 
 
 Route::get('like', function () {
     return view('CustomerInterface/like');

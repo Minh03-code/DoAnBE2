@@ -2,14 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Cart;
 use Illuminate\Http\Request;
 
 class CartController extends Controller
 {
-    public function getItemsInCartTableByAccountID()
-    {
-        $result = Cart::getItemsInCartTableByAccountID(session('account'));
-        return view('CustomerInterface.checkout', ["listProductOfAccount" => $result]);
-    }
+    
 }
