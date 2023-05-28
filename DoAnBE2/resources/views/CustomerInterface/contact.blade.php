@@ -41,7 +41,7 @@
                     <div class="contact__widget">
                         <span class="icon_clock_alt"></span>
                         <h4>Thời gian mở</h4>
-                        <p>{{$contact->open_time}}:00 AM to {{$contact->clone_time}}:00 PM</p>
+                        <p>{{$contact->open_time}} AM to {{$contact->clone_time}} PM</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-6 text-center">
@@ -63,10 +63,8 @@
         <div class="map-inside">
             <i class="icon_pin"></i>
             <div class="inside-widget">
-                <h4>Trường Cao đẳng Công Nghệ Thủ Đức</h4>
                 <ul>
-                    <li>Phone: {{$contact->phone}}</li>
-                    <li>Add: {{$contact->address}}</li>
+                    <li>{{$contact->address}}</li>
                 </ul>
             </div>
         </div>

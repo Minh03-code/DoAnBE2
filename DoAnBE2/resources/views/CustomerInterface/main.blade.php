@@ -169,17 +169,10 @@
                             <span>Tất cả danh mục</span>
                         </div>
                         <ul>
-                            <li><a href="#">Fresh Meat</a></li>
-                            <li><a href="#">Vegetables</a></li>
-                            <li><a href="#">Fruit & Nut Gifts</a></li>
-                            <li><a href="#">Fresh Berries</a></li>
-                            <li><a href="#">Ocean Foods</a></li>
-                            <li><a href="#">Butter & Eggs</a></li>
-                            <li><a href="#">Fastfood</a></li>
-                            <li><a href="#">Fresh Onion</a></li>
-                            <li><a href="#">Papayaya & Crisps</a></li>
-                            <li><a href="#">Oatmeal</a></li>
-                            <li><a href="#">Fresh Bananas</a></li>
+                            @foreach($categoryHeader as $item)
+                            <li><a href="#">{{$item->name}}</a></li>
+                            @endforeach
+                            
                         </ul>
                     </div>
                 </div>
@@ -193,7 +186,7 @@
                         </div>
                         <div class="hero__search__phone">
                             <div class="hero__search__phone__text">
-                                <h5>0123456789</h5>
+                                <h5>{{$contact->phone}}</h5>
                                 <span>Hỗ chợ 24/7 thời gian</span>
                             </div>
                         </div>
@@ -214,9 +207,9 @@
                             <a class="logo" href="{{ route('home') }}">NDMHPteam</a>
                         </div>
                         <ul>
-                            <li>Địa chỉ: 60-49 Road 11378 New York</li>
-                            <li>Số điện thoại: 0123456789</li>
-                            <li>Email: hello@colorlib.com</li>
+                            <li>Địa chỉ: {{$contact->address}}</li>
+                            <li>Số điện thoại: {{$contact->phone}}</li>
+                            <li>Email: {{$contact->email}}</li>
                         </ul>
                     </div>
                 </div>
