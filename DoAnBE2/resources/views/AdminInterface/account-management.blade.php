@@ -23,21 +23,28 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <!-- Hiển thị sản phẩm -->
+                        <!-- Hiển thị tất cả account -->
+                        @foreach ($listAccount as $item)
                         <tr>
-                            <td>#1111</td>
-                            <td class="d-none d-xl-table-cell">tkkh1</td>
-                            <td class="d-none d-xl-table-cell">Nguyễn Tấn Dũng</td>
+                            <td>#{{$item->id}}</td>
+                            <td class="d-none d-xl-table-cell">{{$item->username}}</td>
+                            <td class="d-none d-xl-table-cell">{{$item->profileAccount->name}}</td>
+                            
+                            @if ($item->status == '0')
+                            <td>
+                                <a href="#" class="btn btn-success">Bình thường</a>
+                            </td>
+                            @else
                             <td>
                                 <a href="#" class="btn btn-danger">Khóa</a>
-                                <a href="#" class="btn btn-success">Mở khóa</a>
                             </td>
+                            @endif
                         </tr>
+                        @endforeach
                     </tbody>
                 </table>
+                    {{ $listAccount->links('pagination::bootstrap-5') }}
             </div>
-
-
         </div>
     </main>
 @endsection

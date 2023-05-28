@@ -9,19 +9,19 @@
                     <input type="hidden" name="account-id"> {{-- Phải có category để biết đang sửa của tài khoản nào --}}
                     <div class="mb-3">
                         <label for="edit-name-customer" class="form-label">Tên người dùng</label>
-                        <input type="text" class="form-control" id="edit-name-customer" name="edit-name-customer">
+                        <input type="text" class="form-control" id="edit-name-customer" name="edit-name-customer" value="{{ $profile->name }}">
                     </div>
                     <div class="mb-3">
                         <label for="address" class="form-label">Địa chỉ</label>
-                        <input type="text" class="form-control" id="address" name="address">
+                        <input type="text" class="form-control" id="address" name="address" value="{{ $profile->address }}">
                     </div>
                     <div class="mb-3">
                         <label for="edit-email" class="form-label">Email</label>
-                        <input type="text" class="form-control" id="edit-email" name="edit-email">
+                        <input type="text" class="form-control" id="edit-email" name="edit-email" value="{{ $profile->email }}">
                     </div>
                     <div class="mb-3">
                         <label for="edit-phone" class="form-label">Số điện thoại</label>
-                        <input type="text" class="form-control" id="edit-phone" name="edit-phone">
+                        <input type="text" class="form-control" id="edit-phone" name="edit-phone" value="{{ $profile->phone_number }}">
                     </div>
 
                     <button type="submit" class="btn btn-primary">Chấp nhận thay đổi</button>

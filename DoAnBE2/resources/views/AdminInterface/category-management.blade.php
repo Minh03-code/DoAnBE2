@@ -25,22 +25,28 @@
                     </thead>
                     <tbody>
                         <!-- Hiển thị sản phẩm -->
-                        <tr>
-                            <td>#1111</td>
-                            <td class="d-none d-xl-table-cell">Nguyễn Tấn Dũng</td>
-                            <td>
-                                <a href="#" class="btn btn-danger">Khóa</a>
-                                <a href="#" class="btn btn-success">Mở khóa</a>
-                            </td>
-                            <td class="d-none d-md-table-cell">
-                                <a href="{{ route('admin.edit-category') }}" class="btn btn-primary">Chỉnh sửa</a>
-                            </td>
-                        </tr>
+                        @foreach ($listCategory as $category)
+                            <tr>
+                                <td>#{{ $category->id }}</td>
+                                <td class="d-none d-xl-table-cell">{{ $category->name }}</td>
+                                <td>
+                                    @if ($category->status == 0)
+                                        <a href="#" class="btn btn-success">Bình thường</a>
+                                    @else
+                                        <a href="#" class="btn btn-danger">Ngưng bán</a>
+                                    @endif
+                                </td>
+                                <td class="d-none d-md-table-cell">
+                                    <a href="{{ route('admin.edit-category') }}" class="btn btn-primary">Chỉnh sửa</a>
+                                </td>
+                            </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
 
 
         </div>
+        {{ $listCategory->links('pagination::bootstrap-5')}}
     </main>
 @endsection

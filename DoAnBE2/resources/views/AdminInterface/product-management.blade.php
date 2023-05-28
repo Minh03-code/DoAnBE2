@@ -28,23 +28,29 @@
 				</thead>
 				<tbody>
 					<!-- Hiển thị sản phẩm -->
+					@foreach ($listProduct as $item)
 					<tr>
-						<td>#1111</td>
-						<td class="d-none d-xl-table-cell">Nguyễn Tấn Dũng</td>
-						<td class="d-none d-xl-table-cell">1000 đồng</td>
+						<td>#{{$item->id}}</td>
+						<td class="d-none d-xl-table-cell">{{$item->name}}</td>
+						<td class="d-none d-xl-table-cell">{{$item->price}}</td>
+						@if ($item->status == '0')
+						<td>
+							<a href="#" class="btn btn-success">Bình thường</a>
+						</td>
+						@else
 						<td>
 							<a href="#" class="btn btn-danger">Khóa</a>
-							<a href="#" class="btn btn-success">Mở khóa</a>
 						</td>
+						@endif
 						<td class="d-none d-md-table-cell">
 							<a href="{{ route('admin.edit-product') }}" class="btn btn-primary">Chỉnh sửa</a>
 						</td>
 					</tr>
+					@endforeach
 				</tbody>
 			</table>
+				{{ $listProduct->links('pagination::bootstrap-5') }}
 		</div>
-
-
 	</div>
 </main>
 @endsection
