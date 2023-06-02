@@ -30,13 +30,12 @@ class ProductManagementPageController extends MainAdminController
         $gia = $request->$productPrice;
         $productDescription = 'product-description';
         $mota = $request->$productDescription;
-        $productImage = 'product-image';
-        $image = $request->$productImage;
-        //Lấy cái tên ảnh
-        $anh = $image->getClientoriginalName();
         $categoryId = 'category-id';
         $danhmuc = $request->$categoryId;
-        $ngaygiohientai = Date::now();
+        $productImage = 'product-image';
+        $image = $request->$productImage;
+        if(isset($request->$productName)&&$request->$productPrice&&$request->$productDescription&&$request->$categoryId){
+            $ngaygiohientai = Date::now();
         $scheduleTime = Carbon::createFromTimestampUTC($ngaygiohientai)->diffInSeconds();
         $duoiAnh = $image->getClientOriginalExtension();
         $chuoitenAnh = $scheduleTime.'.'.$duoiAnh;
@@ -44,9 +43,14 @@ class ProductManagementPageController extends MainAdminController
         //Di chuyển ảnh vào project thành công
         $image->move(public_path('img'),$chuoitenAnh);
 
-        $result = Product::getPaginationProducts(1);
-        return view('AdminInterface.product-management', ["listProduct"=>$result]);
-
+        $categories = Category::getAllCategory();
+        return view('AdminInterface/form-product',['categories'=>$categories])->with('thongbao',"Thêm Món Ăn Thành Công!");
+        }else{
+            $categories = Category::getAllCategory();
+        return view('AdminInterface/form-product',['categories'=>$categories])->with('thongbao',"Thêm Món Ăn Không Thành Công!");
+        }
+        //Lấy cái tên ảnh
+        
        
     }
     public function getCategoryForAddNewProductPage()

@@ -86,7 +86,11 @@
                     <button type="submit" class="btn btn-primary">Thêm món ăn</button>
                 </form>
             </div>
-
+            @if(isset($thongbao))
+            <div>
+                {{$thongbao}}
+            </div>
+            @endif
         </div>
     </div>
     @endif
