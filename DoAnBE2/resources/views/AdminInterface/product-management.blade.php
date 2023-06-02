@@ -33,9 +33,9 @@
 						<td>#{{$item->id}}</td>
 						<td class="d-none d-xl-table-cell">{{$item->name}}</td>
 						<td class="d-none d-xl-table-cell">{{$item->price}}</td>
-						@if ($item->status == '0')
+						@if ($item->status == 0)
 						<td>
-							<a href="#" class="btn btn-success">Bình thường</a>
+							<a href="{{route('admin.changeStt',['id'=>$item->id])}}" class="btn btn-success">Bình thường</a>
 						</td>
 						@else
 						<td>

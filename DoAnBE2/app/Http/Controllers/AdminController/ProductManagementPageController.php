@@ -20,4 +20,13 @@ class ProductManagementPageController extends MainAdminController
         $categories = Category::getAllCategory();
         return view('AdminInterface/form-product',['product'=>$product,'categories'=>$categories]);
     }
+
+    public function changeStatusOfProductByProduct(Request $request)
+    {
+        $product = Product::find($request->id);
+        $product->status = 1;
+        $product->update();
+        return redirect('admin/product-management');
+        
+    }
 }

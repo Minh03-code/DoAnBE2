@@ -100,6 +100,8 @@ Route::group(['prefix'=>'admin','as'=>'admin.'], function(){
 
     Route::get('/edit-product', [ProductManagementPageController::class,'showProductForEditPage'])->name('edit-product');
 
+    Route::get('/product-management-change', [ProductManagementPageController::class, 'changeStatusOfProductByProduct'])->name('changeStt');
+
     Route::get('/add-category', function () {
         return view('AdminInterface/form-category');
     })->name('add-category');
