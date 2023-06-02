@@ -10,6 +10,16 @@ class Product extends Model
     use HasFactory;
     protected $table = 'products';
 
+    protected $fillable = [
+        'name',
+        'price',
+        'image',
+        'description',
+        'status',
+        'category_id',
+    ];
+
+    
 
     //Start 3
     public static function getProductsByCategoryNumberLimit($gioiHan,$categoryId)
