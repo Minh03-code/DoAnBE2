@@ -12,8 +12,8 @@ class LikePageController extends MainCustomerController
   public function likePage()
   {
 
-    if (session('account','1') != null) {
-      $i = +session('account','1');
+    if (session('account') != null) {
+      $i = +session('account');
       $mangSpYeuThich = Product::getAllProductsLikedByAccountID($i);
       return view('CustomerInterface/like', ['mangSpYeuThich' => $mangSpYeuThich]);
     }
