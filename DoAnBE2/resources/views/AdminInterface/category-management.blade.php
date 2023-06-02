@@ -31,9 +31,9 @@
                                 <td class="d-none d-xl-table-cell">{{ $category->name }}</td>
                                 <td>
                                     @if ($category->status == 0)
-                                        <a href="#" class="btn btn-success">Bình thường</a>
+                                        <a href="{{route('admin.ChangeStatusCategory', ['id'=>$category->id])}}" class="btn btn-success">Bình thường</a>
                                     @else
-                                        <a href="#" class="btn btn-danger">Ngưng bán</a>
+                                        <a href="{{route('admin.ChangeStatusCategory', ['id'=>$category->id])}}" class="btn btn-danger">Ngưng bán</a>
                                     @endif
                                 </td>
                                 <td class="d-none d-md-table-cell">
