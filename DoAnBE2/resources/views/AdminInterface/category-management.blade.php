@@ -10,7 +10,7 @@
                             <h5 class="card-title mb-0">Quản lí danh mục</h5>
                         </div>
                         <div class="col-md-9">
-                            <a href="{{ route('admin.editcategory') }}" class="btn btn-primary">Thêm</a>
+                            <a href="{{ route('admin.edit-category') }}" class="btn btn-primary">Thêm</a>
                         </div>
                     </div>
                 </div>

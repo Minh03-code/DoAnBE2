@@ -6,15 +6,17 @@
         <div class="container">
             <p class="title-form-n">Sửa Danh Mục</p>
             <div class="content-of-add-category">
-                <form action="{{ router('admin.editcategory') }}" method="POST">
-                    <input type="text" name="category-id" value="{{$category->id}}" readonly> {{-- Nếu là sửa thì phải có id để sửa --}}
+                <form action="{{ route('admin.change-category', ['id=' . $category->id]) }}" method="POST" enctype="multipart/form-data">
+                    @method('POST')
+                    @csrf
+                    <input type="hidden" name="categoryId" value="{{$category->id}}"> {{-- Nếu là sửa thì phải có id để sửa --}}
                     <div class="mb-3">
                         <label for="category-name" class="form-label">Tên danh mục</label>
                         <input type="text" class="form-control" id="category-name" name="category-name" value="{{$category->name}}">
                     </div>
                     <div class="mb-3">
                         <label for="category-image" class="form-label">Chọn ảnh</label>
-                        <input type="file" class="form-control" id="category-image" name="category-image">
+                        <input type="file" class="form-control" id="category-image" name="category-image" value="{{$category->image}}">
                     </div>
                     <div class="mb-3">
                         <label for="category-description" class="form-label">Mô tả danh mục</label>
