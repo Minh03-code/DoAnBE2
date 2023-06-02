@@ -94,9 +94,13 @@ Route::group(['prefix'=>'admin','as'=>'admin.'], function(){
     //Start account-management
     Route::get('/account-management', [AccountManagementPageController::class, 'getPaginationAccount'])->name('account-management');
 
-    Route::get('/add-product', function () {
-        return view('AdminInterface/form-product');
-    })->name('add-product');
+    Route::get('/add-product', [ProductManagementPageController::class,'getCategoryForAddNewProductPage'])->name('add-product');
+     
+     //Them sản phẩm
+    Route::post('/product-management', 
+        [ProductManagementPageController::class,'createNewProduct']
+    )->name('createNewProduct');
+    //Them sản phẩm
 
     Route::get('/edit-product', [ProductManagementPageController::class,'showProductForEditPage'])->name('edit-product');
 
