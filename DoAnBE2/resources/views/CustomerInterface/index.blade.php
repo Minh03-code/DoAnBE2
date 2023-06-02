@@ -65,7 +65,7 @@ use App\Models\ProductLike;
                         <div class="featured__item__pic set-bg" data-setbg="img/product/{{$product->image}}">
                             <ul class="featured__item__pic__hover">
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                <li><a href="{{ route('add-to-cart', ['productID'=>$product->id]) }}"><i class="fa fa-shopping-cart"></i></a></li>
                             </ul>
                         </div>
                         <div class="featured__item__text">

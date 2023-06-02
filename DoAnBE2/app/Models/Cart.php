@@ -10,8 +10,19 @@ class Cart extends Model
     use HasFactory;
     protected $table = 'carts';
 
+    protected $fillable = [
+        'account_id',
+        'product_id',
+        'product_name',
+        'product_price',
+        'product_image',
+        'quantity'
+
+    ];
+
     // Start 7
-    public static function countProductsAddToCartByAccountID($account_id){
+    public static function countProductsAddToCartByAccountID($account_id)
+    {
         $result = self::where('account_id', $account_id)->count();
 
         return $result;

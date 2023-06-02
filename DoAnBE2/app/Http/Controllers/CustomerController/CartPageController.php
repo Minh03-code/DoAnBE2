@@ -4,6 +4,7 @@ namespace App\Http\Controllers\CustomerController;
 
 use App\Http\Controllers\Controller;
 use App\Models\Cart;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class CartPageController extends Controller
@@ -16,6 +17,26 @@ class CartPageController extends Controller
         $result = Cart::getItemsInCartTableByAccountID(session('account'));
         //Xoa sesion account bang lenh pull('account');
         // $request->session()->pull('account');
-        return view('CustomerInterface.shoping-cart', ["listProductOfAccount"=>$result]);
+        return view('CustomerInterface.shoping-cart', ["listProductOfAccount" => $result]);
+    }
+
+    public function addToCartByAccountID(Request $request)
+    {
+        $accountID = 1;
+        $product = Product::getProductByID($request->productID);
+        if (Cart::where([
+            ['account_id', '=', $accountID],
+            ['product_id', '=', $product->id]
+            ])->first() == null) {
+            Cart::create([
+                'account_id' => $accountID,
+                'product_id' => $product->id,
+                'product_name' => $product->name,
+                'product_price' => $product->price,
+                'product_image' => $product->image,
+                'quantity' => 1
+            ]);
+        }
+        return view('CustomerInterface.shoping-cart', ["listProductOfAccount" => Cart::getItemsInCartTableByAccountID($accountID)]);
     }
 }
