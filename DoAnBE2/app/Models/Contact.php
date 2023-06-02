@@ -9,6 +9,15 @@ class Contact extends Model
 {
     use HasFactory;
     protected $table = 'contacts';
+
+    protected $fillable = [
+        'logo',
+        'address',
+        'phone',
+        'open_time',
+        'clone_time',
+        'email',
+    ];
     //Start func 8 v1.0
     public static function getAllDataInContactTable()
     {
