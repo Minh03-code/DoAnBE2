@@ -58,5 +58,14 @@ class CartPageController extends Controller
              ])->update(['quantity'=> $quantity]);
         return redirect('cart');
     }
-
+	public function deleteItemInCartByProductID(Request $request)
+    {
+        $accountID = session()->get('account');
+        $itemID = $request->itemID;
+        Cart::where([
+            ['account_id', $accountID],
+            ['product_id', $itemID]
+        ])->delete();
+        return redirect('cart');
+    }
 }
