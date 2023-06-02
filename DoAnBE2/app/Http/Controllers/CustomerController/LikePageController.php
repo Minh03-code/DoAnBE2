@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 
 class LikePageController extends MainCustomerController
 {
-    public function likePage()
+   public function likePage()
     {
         
         if(session('account')!=null)
@@ -29,4 +29,11 @@ class LikePageController extends MainCustomerController
             return view('LoginRegister/login');
         }
     }
+     //deleteItemInProductsLiked
+  public function deleteItemInProductsLiked(Request $request)
+  {
+    $accountId = session('account');
+    ProductLike::where([['account_id', '=', $accountId], ['product_id', '=', $request->productId]])->delete();
+    return redirect('like')->with('success', 'Xoa thanh cong');
+  }
 }

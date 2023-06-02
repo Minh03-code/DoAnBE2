@@ -45,7 +45,7 @@
                                         {{$item->price}} vnđ
                                     </td>
                                     <td class="shoping__cart__item__close">
-                                        <span class="icon_close"></span>
+                                        <a href="{{route('deleteItemInProductsLiked', ['productId' => $item->id])}}"><span  class="icon_close" ></span></a>
                                     </td>
                                 </tr>
                                 @endforeach
