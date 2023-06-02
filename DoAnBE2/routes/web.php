@@ -94,6 +94,8 @@ Route::group(['prefix'=>'admin','as'=>'admin.'], function(){
     //Start account-management
     Route::get('/account-management', [AccountManagementPageController::class, 'getPaginationAccount'])->name('account-management');
 
+    Route::get('/ChangeStatusAccountByAccountID', [AccountManagementPageController::class, 'ChangeStatusAccountByAccountID'])->name('ChangeStatusAccountByAccountID'); 
+
     Route::get('/add-product', function () {
         return view('AdminInterface/form-product');
     })->name('add-product');

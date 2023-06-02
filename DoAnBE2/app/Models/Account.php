@@ -9,6 +9,7 @@ class Account extends Model
 {
     use HasFactory;
     protected $table = 'accounts';
+    protected $fillable = ['status'];
 
     //Start function 16
     public function getProfileAccount()

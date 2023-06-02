@@ -32,11 +32,11 @@
                             
                             @if ($item->status == '0')
                             <td>
-                                <a href="#" class="btn btn-success">Bình thường</a>
+                                <a href="{{route('admin.ChangeStatusAccountByAccountID', ['accountId' => $item->id])}}" class="btn btn-success">Bình thường</a>
                             </td>
                             @else
                             <td>
-                                <a href="#" class="btn btn-danger">Khóa</a>
+                                <a href="{{route('admin.ChangeStatusAccountByAccountID', ['accountId' => $item->id])}}" class="btn btn-danger">Khóa</a>
                             </td>
                             @endif
                         </tr>
