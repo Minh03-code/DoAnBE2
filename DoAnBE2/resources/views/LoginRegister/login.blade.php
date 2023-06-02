@@ -35,7 +35,7 @@
 				<form action="{{route('login')}}" class="login100-form validate-form" method="post">
 					@method('POST')
 					<span class="login100-form-title p-b-49">
-						Đăng kí
+						Đăng Nhập
 					</span>
 
 					<div class="wrap-input100 validate-input m-b-23" data-validate = "Username is reauired">
@@ -54,6 +54,11 @@
 						
 					</div>
 					
+					@if (isset($thongbao) == 1)
+					<div class="alert alert-danger">
+						Tài khoản hoặc mật khẩu không đúng!!!
+					</div>
+					@endif
 					<div class="container-login100-form-btn">
 						<div class="wrap-login100-form-btn">
 							<div class="login100-form-bgbtn"></div>
@@ -63,7 +68,7 @@
 						</div>
 					</div>
 
-
+					
 
 					<div class="flex-col-c p-t-155">
 						<a href="{{route('home')}}" class="txt2">

@@ -17,20 +17,22 @@ class LoginPageController extends Controller
         if ($request->method('post')) {
             $username = $request->input('username');
             $password = $request->input('password');
-            if (Hash::check($password, Account::where('username', $username)->first()->password) == true) {
+            if (Account::where('username', $username)->first() != null) {
+                if (Hash::check($password, Account::where('username', $username)->first()->password) == true) {
 
-                $accountID = Account::where([
-                    ['username', $username]
-                ])->first()->id;
-                
+                    $accountID = Account::where([
+                        ['username', $username]
+                    ])->first()->id;
+                    session()->put('account',$accountID);   
+                    return redirect('home');             
+                }
             }
+            
         }
 
-       
-        session()->put('account',$accountID);
-        $products = Product::getProductByNumberLimit(16);
-        $categories = Category::getAllCategory();
-        return view('CustomerInterface/index',['products'=>$products,'categories'=>$categories]);
+       return view('LoginRegister/login', ["thongbao" => 1]);
+      
+        
     }
 
     public function logout(Request $request)
