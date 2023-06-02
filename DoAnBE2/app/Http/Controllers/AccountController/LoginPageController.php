@@ -41,9 +41,7 @@ class LoginPageController extends Controller
      
         session()->forget('account');
 
-        $products = Product::getProductByNumberLimit(16);
-        $categories = Category::getAllCategory();
-        return view('CustomerInterface/index',['products'=>$products,'categories'=>$categories]);
+        return redirect('home');
     }
     
 }

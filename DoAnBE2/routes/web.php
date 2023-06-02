@@ -80,7 +80,7 @@ Route::get('login', function () {
 
 Route::post('login', [LoginPageController::class,'checkLogin'])->name('login'); 
 // Logout
-Route::get('home', [LoginPageController::class,'logout'])->name('logout'); 
+Route::get('louout', [LoginPageController::class,'logout'])->name('logout'); 
 // End module login 
 
 
