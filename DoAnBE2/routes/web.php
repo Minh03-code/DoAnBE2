@@ -127,7 +127,7 @@ Route::group(['prefix'=>'admin','as'=>'admin.'], function(){
     Route::get('/add-product', [ProductManagementPageController::class,'getCategoryForAddNewProductPage'])->name('add-product');
      
      //Them sản phẩm
-    Route::post('/product-management', 
+    Route::post('/createNewProduct', 
         [ProductManagementPageController::class,'createNewProduct']
     )->name('createNewProduct');
     //Them sản phẩm
