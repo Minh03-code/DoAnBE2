@@ -105,6 +105,8 @@ Route::group(['prefix'=>'admin','as'=>'admin.'], function(){
     })->name('add-category');
 
     Route::get('/edit-category', [CategoryManagementPageController::class, 'showCategoryForEditPage'])->name('edit-category');
+    Route::post('/edit-category', [CategoryManagementPageController::class, 'editCategory'])->name('editcategory');
+    
     Route::get('/form-profile', [ProfileAdminController::class, 'show'])->name('form-profile');
 
     Route::get('/change-password', function () {

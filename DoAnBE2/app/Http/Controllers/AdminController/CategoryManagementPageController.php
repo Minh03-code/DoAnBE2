@@ -18,4 +18,7 @@ class CategoryManagementPageController extends MainAdminController
         $category = Category::find($request->id);
         return view('AdminInterface/form-category',['category'=>$category]);
     }
+    public function editCategory(Request $request){
+        
+    }
 }

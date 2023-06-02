@@ -6,8 +6,8 @@
         <div class="container">
             <p class="title-form-n">Sửa Danh Mục</p>
             <div class="content-of-add-category">
-                <form action="#" method="POST">
-                    <input type="hidden" name="category-id" value="{{$category->id}}"> {{-- Nếu là sửa thì phải có id để sửa --}}
+                <form action="{{ router('admin.editcategory') }}" method="POST">
+                    <input type="text" name="category-id" value="{{$category->id}}" readonly> {{-- Nếu là sửa thì phải có id để sửa --}}
                     <div class="mb-3">
                         <label for="category-name" class="form-label">Tên danh mục</label>
                         <input type="text" class="form-control" id="category-name" name="category-name" value="{{$category->name}}">

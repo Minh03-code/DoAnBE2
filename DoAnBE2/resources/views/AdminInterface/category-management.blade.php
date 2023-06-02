@@ -10,10 +10,20 @@
                             <h5 class="card-title mb-0">Quản lí danh mục</h5>
                         </div>
                         <div class="col-md-9">
-                            <a href="{{ route('admin.add-category') }}" class="btn btn-primary">Thêm</a>
+                            <a href="{{ route('admin.editcategory') }}" class="btn btn-primary">Thêm</a>
                         </div>
                     </div>
                 </div>
+                @if (session('status'))
+                    <div class="alert alert-success">
+                        {{ session('status') }}
+                    </div>
+                @endif
+                @if (session('dataempty'))
+                    <div class="alert alert-danger">
+                        {{ session('dataempty') }}
+                    </div>
+                @endif
                 <table class="table table-hover my-0">
                     <thead>
                         <tr>
@@ -37,7 +47,8 @@
                                     @endif
                                 </td>
                                 <td class="d-none d-md-table-cell">
-                                    <a href="{{ route('admin.edit-category') }}" class="btn btn-primary">Chỉnh sửa</a>
+                                    <a href="{{ route('admin.edit-category', ['id=' . $category->id]) }}"
+                                        class="btn btn-primary">Chỉnh sửa</a>
                                 </td>
                             </tr>
                         @endforeach
@@ -47,6 +58,6 @@
 
 
         </div>
-        {{ $listCategory->links('pagination::bootstrap-5')}}
+        {{ $listCategory->links('pagination::bootstrap-5') }}
     </main>
 @endsection
