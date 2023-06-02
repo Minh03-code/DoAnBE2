@@ -69,7 +69,9 @@ Route::get('form-profile',[ProfileCustomerPageController::class,'edit_profile'])
 Route::get('change-password', function () {
     return view('CustomerInterface/change-password');
 })->name('change-password'); 
-Route::get('bill-history', [BillHistoryPageController::class, 'showBill'])->name('bill-history'); 
+Route::get('bill-history', [BillHistoryPageController::class, 'showBill'])->name('bill-history');
+
+Route::post('change-profile', [ProfileCustomerPageController::class, 'editProfile'])->name('change-profile');
 
 // Login Register
 Route::get('login', function () {
@@ -107,7 +109,8 @@ Route::group(['prefix'=>'admin','as'=>'admin.'], function(){
     Route::get('/ChangeStatusCategory', [CategoryManagementPageController::class, 'ChangeStatusCategory'])->name('ChangeStatusCategory'); 
     Route::get('/edit-category', [CategoryManagementPageController::class, 'showCategoryForEditPage'])->name('edit-category');
     Route::get('/form-profile', [ProfileAdminController::class, 'show'])->name('form-profile');
-
+    Route::post('/change-profile', [ProfileAdminController::class, 'editProfile'])->name('change-profile');
+   
     Route::get('/change-password', function () {
         return view('AdminInterface/change-password');
     })->name('change-password');
