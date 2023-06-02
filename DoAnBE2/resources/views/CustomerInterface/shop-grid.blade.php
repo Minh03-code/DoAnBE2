@@ -1,3 +1,6 @@
+@php
+use App\Models\ProductLike;
+@endphp
 @extends('CustomerInterface/main')
 
 @section('content')
@@ -50,6 +53,8 @@
                                 <div class="product__item__text">
                                     <h6><a href="{{ route('detail', ["id"=>$listP->id])}}">{{$listP->name}}</a></h6>
                                     <h5>${{$listP->price}}</h5>
+                                    
+                                    <h6>Lượt thích: {{ ProductLike::countLikeByProductID($listP->id) }}</h6>
                                 </div>
                             </div>
                         </div>
