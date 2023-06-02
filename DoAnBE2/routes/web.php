@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AccountController\LoginPageController;
+use App\Http\Controllers\AccountController\RegisterPageController;
 use App\Http\Controllers\CustomerController\HomePageController;
 use App\Http\Controllers\CustomerController\ShopPageController;
 use App\Http\Controllers\SearchController;
@@ -76,14 +77,19 @@ Route::get('bill-history', [BillHistoryPageController::class, 'showBill'])->name
 Route::get('login', function () {
     return view('LoginRegister/login');
 })->name('login'); 
+
 Route::post('login', [LoginPageController::class,'checkLogin'])->name('login'); 
 // Logout
 Route::get('home', [LoginPageController::class,'logout'])->name('logout'); 
 // End module login 
 
+
+// Start Register
 Route::get('register', function () {
     return view('LoginRegister/register');
-})->name('register');
+})->name('register'); 
+Route::post('create-account', [RegisterPageController::class, "register"])->name('create-account');
+// End Register
 
 // Admin interface
 Route::group(['prefix'=>'admin','as'=>'admin.'], function(){
