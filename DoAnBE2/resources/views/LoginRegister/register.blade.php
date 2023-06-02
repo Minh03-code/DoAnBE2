@@ -32,12 +32,29 @@
 	<div class="limiter">
 		<div class="container-login100" style="background-image: url('loginregister/images/bg-01.jpg');">
 			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
-				<form action="" class="login100-form validate-form">
+				
+				
+				<form action="{{ route('create-account') }}" class="login100-form validate-form" method="POST">
+					@method('POST')
 					<span class="login100-form-title p-b-49">
 						Đăng kí
 					</span>
-
-					<div class="wrap-input100 validate-input m-b-23" data-validate = "Username is reauired">
+					
+						@if(isset($thongbao))
+						<div>
+							@if ($thongbao == 1)
+								 <div class="alert alert-success">
+									Đăng ký thành công
+								 </div>
+								 @else
+								 <div class="alert alert-danger">
+									Đăng ký thất bại
+								 </div>
+							 @endif
+						</div>
+						@endif
+					
+					<div class="wrap-input100 validate-input m-b-23" data-validate = "Username is required">
 						<span class="label-input100">Tài khoản</span>
 						<input class="input100" type="text" name="username" placeholder="Nhập tài khoản của bạn">
 						<span class="focus-input100" data-symbol="&#xf206;"></span>
@@ -45,13 +62,13 @@
 
 					<div class="wrap-input100 validate-input" data-validate="Password is required">
 						<span class="label-input100">Mật khẩu</span>
-						<input class="input100" type="password" name="pass" placeholder="Nhập mật khẩu của bạn">
+						<input class="input100" type="password" name="password" placeholder="Nhập mật khẩu của bạn">
 						<span class="focus-input100" data-symbol="&#xf190;"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate="Password is required">
 						<span class="label-input100">Xác nhận mật khẩu</span>
-						<input class="input100" type="password" name="pass" placeholder="Xác nhận mật khẩu">
+						<input class="input100" type="password" name="cfpassword" placeholder="Xác nhận mật khẩu">
 						<span class="focus-input100" data-symbol="&#xf190;"></span>
 					</div>
 					
@@ -64,7 +81,7 @@
 					<div class="container-login100-form-btn">
 						<div class="wrap-login100-form-btn">
 							<div class="login100-form-bgbtn"></div>
-							<button class="login100-form-btn">
+							<button class="login100-form-btn" type="submit">
 								Đăng kí
 							</button>
 						</div>
@@ -79,7 +96,7 @@
 						</a>
 					</div>
 
-                    
+                    @csrf
 				</form>
 			</div>
 		</div>
