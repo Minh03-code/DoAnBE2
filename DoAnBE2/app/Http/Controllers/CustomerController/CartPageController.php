@@ -22,7 +22,7 @@ class CartPageController extends Controller
 
     public function addToCartByAccountID(Request $request)
     {
-        $accountID = 1;
+        $accountID = session()->get('account');
         $product = Product::getProductByID($request->productID);
         if (Cart::where([
             ['account_id', '=', $accountID],
