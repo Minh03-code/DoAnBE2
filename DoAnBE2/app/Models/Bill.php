@@ -9,6 +9,7 @@ class Bill extends Model
 {
     use HasFactory;
     protected $table = 'bills';
+    protected $fillable = ['status'];
 
     public function getProductsOfBill(){
         $this->setAttribute("products_of_bill", $this->hasMany(BillProduct::class, "bill_id", "id")->get());
