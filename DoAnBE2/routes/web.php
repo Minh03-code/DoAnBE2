@@ -73,7 +73,10 @@ Route::get('change-password', function () {
 })->name('change-password'); 
 Route::get('bill-history', [BillHistoryPageController::class, 'showBill'])->name('bill-history'); 
 
-// Start module login 
+
+ 
+Route::get('add-to-cart', [CartPageController::class, 'addToCartByAccountID'])->name('add-to-cart');
+// Start module login
 Route::get('login', function () {
     return view('LoginRegister/login');
 })->name('login'); 
