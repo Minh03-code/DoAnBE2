@@ -15,8 +15,9 @@ class Contact extends Model
         'address',
         'phone',
         'open_time',
-        'clone_time',
+        'close_time',
         'email',
+        'image-banner'
     ];
     //Start func 8 v1.0
     public static function getAllDataInContactTable()
