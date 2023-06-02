@@ -72,16 +72,14 @@ Route::get('change-password', function () {
 })->name('change-password'); 
 Route::get('bill-history', [BillHistoryPageController::class, 'showBill'])->name('bill-history'); 
 
-// Login Register
+// Start module login 
 Route::get('login', function () {
     return view('LoginRegister/login');
 })->name('login'); 
 Route::post('login', [LoginPageController::class,'checkLogin'])->name('login'); 
-
 // Logout
-
 Route::get('home', [LoginPageController::class,'logout'])->name('logout'); 
-
+// End module login 
 
 Route::get('register', function () {
     return view('LoginRegister/register');

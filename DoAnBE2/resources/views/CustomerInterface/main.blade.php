@@ -91,7 +91,8 @@ use App\Models\Account;
                     </div>
                     <div class="col-lg-6 col-md-6">
                         <div class="header__top__right">
-                            {{-- PC --}}
+
+                            {{-- Start module login  --}}
                             {{-- Khi chưa đăng nhập thì hiển thị --}}
                             @if (!Session::has('account'))
                             <div class="header__top__right__auth">
@@ -113,6 +114,7 @@ use App\Models\Account;
                             </div>
                             @endif
                             {{-- Khi đăng nhập thì hiển thị --}}
+                             {{-- Start module login  --}}
                         </div>
                     </div>
                 </div>
