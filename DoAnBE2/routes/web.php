@@ -63,6 +63,9 @@ Route::get('search',[SearchController::class,'ResultSearchOnShopPage'] )->name('
 
 Route::get('like', [LikePageController::class,'likePage'])->name('like'); 
 
+//deleteItemInProductsLiked
+Route::get('deleteItemInProductsLiked', [LikePageController::class,'deleteItemInProductsLiked'])->name('deleteItemInProductsLiked'); 
+
 
 Route::get('form-profile',[ProfileCustomerPageController::class,'edit_profile'])->name('form-profile'); 
 
