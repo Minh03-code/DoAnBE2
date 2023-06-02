@@ -17,7 +17,7 @@ class CheckOutPageController extends MainCustomerController
     }
     public function createBillByAccountID(Request $request)
     {
-        $accountID = 1;
+        $accountID = session()->get('account');
         Bill::create([
             'account_id' => $accountID,
             'name' => $request->customerName,
