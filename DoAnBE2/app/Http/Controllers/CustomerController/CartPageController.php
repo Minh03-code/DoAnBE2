@@ -19,7 +19,6 @@ class CartPageController extends Controller
         // $request->session()->pull('account');
         return view('CustomerInterface.shoping-cart', ["listProductOfAccount" => $result]);
     }
-
     public function addToCartByAccountID(Request $request)
     {
         $accountID = session()->get('account');
@@ -39,4 +38,25 @@ class CartPageController extends Controller
         }
         return view('CustomerInterface.shoping-cart', ["listProductOfAccount" => Cart::getItemsInCartTableByAccountID($accountID)]);
     }
+    public function editQuantityOfItemInCartByAccountID(Request $request)
+    {
+        $accountID = session()->get('account');
+        $productID = $request->itemID;
+
+        $quantity = ($request->quantityItem)+0;
+        if($request->btnqty == "+"){
+            $quantity++;
+        }
+        if($request->btnqty == "-"){
+            if($quantity > 1){
+                $quantity--;
+            }
+        }
+        Cart::where([
+            ['account_id', $accountID],
+            ['product_id', $productID]
+             ])->update(['quantity'=> $quantity]);
+        return redirect('cart');
+    }
+
 }
