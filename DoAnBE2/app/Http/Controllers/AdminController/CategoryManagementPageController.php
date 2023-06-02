@@ -34,4 +34,20 @@ class CategoryManagementPageController extends MainAdminController
         return redirect()->route('admin.category-management')->with('dataempty', 'data field cannot be empty');
         }
     }
+    public function ChangeStatusCategory(Request $request){
+        $category = Category::where('id', '=', $request->id)->first();
+        $status = $category->status;
+        if ($status == 1){   
+            $data = [
+                'status' => 0
+            ];                                                 
+        }
+        else{
+            $data = [
+                'status' => 1
+            ]; 
+        }
+        $category->update($data);
+        return redirect()->route('admin.category-management');
+    }
 }

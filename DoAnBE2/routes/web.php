@@ -146,7 +146,11 @@ Route::group(['prefix'=>'admin','as'=>'admin.'], function(){
         return view('AdminInterface/form-category');
     })->name('add-category');
 
+
     Route::post('/add-category',[CategoryManagementPageController::class, 'addCategory'])->name('addCategory');;
+
+    Route::get('/ChangeStatusCategory', [CategoryManagementPageController::class, 'ChangeStatusCategory'])->name('ChangeStatusCategory'); 
+
     Route::get('/edit-category', [CategoryManagementPageController::class, 'showCategoryForEditPage'])->name('edit-category');
     
     Route::get('/form-profile', [ProfileAdminController::class, 'show'])->name('form-profile');
