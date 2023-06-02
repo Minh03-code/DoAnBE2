@@ -22,8 +22,11 @@ class LikePageController extends MainCustomerController
     }
     public function likeProductForAccountID(Request $request)
     {
-        ProductLike::create(['product_id'=>$request->id,'account_id'=>2]);
-       
-        return back()->withInput();
+        if(session()->has('account')){
+            ProductLike::create(['product_id'=>$request->id,'account_id'=>session()->get('account')]);
+            return back()->withInput();
+        }else{
+            return view('LoginRegister/login');
+        }
     }
 }
