@@ -4,7 +4,6 @@
 <main class="content">
 	<div class="container-fluid p-0">
 
-
 		<div class="card flex-fill">
 			<div class="card-header">
 				<div class="row">
@@ -43,7 +42,7 @@
 						</td>
 						@endif
 						<td class="d-none d-md-table-cell">
-							<a href="{{ route('admin.edit-product') }}" class="btn btn-primary">Chỉnh sửa</a>
+							<a href="{{ route('admin.edit-product',['id'=>$item->id]) }}" class="btn btn-primary">Chỉnh sửa</a>
 						</td>
 					</tr>
 					@endforeach

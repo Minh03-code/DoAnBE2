@@ -133,6 +133,12 @@ Route::group(['prefix'=>'admin','as'=>'admin.'], function(){
     //Them sản phẩm
 
     Route::get('/edit-product', [ProductManagementPageController::class,'showProductForEditPage'])->name('edit-product');
+    //Sửa sản phẩm
+    Route::post('/product-management', 
+        [ProductManagementPageController::class,'editProductInformationByProduct']
+    )->name('edit_product');
+
+    Route::get('/edit-product', [ProductManagementPageController::class,'showProductForEditPage'])->name('edit-product');
 
     Route::get('/add-category', function () {
         return view('AdminInterface/form-category');
