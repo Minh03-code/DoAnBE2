@@ -70,7 +70,7 @@ Route::get('change-password', function () {
     return view('CustomerInterface/change-password');
 })->name('change-password'); 
 Route::get('bill-history', [BillHistoryPageController::class, 'showBill'])->name('bill-history'); 
-
+Route::get('delete-item-in-cart', [CartPageController::class, 'deleteItemInCartByProductID'])->name('delete-item-in-cart'); 
 // Login Register
 Route::get('login', function () {
     return view('LoginRegister/login');

@@ -63,7 +63,7 @@
                                         @endphp
                                     </td>
                                     <td class="shoping__cart__item__close">
-                                        <span class="icon_close"></span>
+                                        <a href="{{ route('delete-item-in-cart', ['itemID'=>$item->product_id]) }}"><span class="icon_close"></span></a>
                                     </td>
                                 </tr>
                                 @endforeach
