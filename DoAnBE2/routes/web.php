@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AccountController\LoginPageController;
 use App\Http\Controllers\CustomerController\HomePageController;
 use App\Http\Controllers\CustomerController\ShopPageController;
 use App\Http\Controllers\SearchController;
@@ -75,6 +76,13 @@ Route::get('bill-history', [BillHistoryPageController::class, 'showBill'])->name
 Route::get('login', function () {
     return view('LoginRegister/login');
 })->name('login'); 
+Route::post('login', [LoginPageController::class,'checkLogin'])->name('login'); 
+
+// Logout
+
+Route::get('home', [LoginPageController::class,'logout'])->name('logout'); 
+
+
 Route::get('register', function () {
     return view('LoginRegister/register');
 })->name('register');

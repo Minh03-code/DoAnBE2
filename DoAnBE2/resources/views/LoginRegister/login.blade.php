@@ -32,7 +32,8 @@
 	<div class="limiter">
 		<div class="container-login100" style="background-image: url('loginregister/images/bg-01.jpg');">
 			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
-				<form class="login100-form validate-form">
+				<form action="{{route('login')}}" class="login100-form validate-form" method="post">
+					@method('POST')
 					<span class="login100-form-title p-b-49">
 						Đăng kí
 					</span>
@@ -45,7 +46,7 @@
 
 					<div class="wrap-input100 validate-input" data-validate="Password is required">
 						<span class="label-input100">Mật khẩu</span>
-						<input class="input100" type="password" name="pass" placeholder="Nhập mật khẩu của bạn">
+						<input class="input100" type="password" name="password" placeholder="Nhập mật khẩu của bạn">
 						<span class="focus-input100" data-symbol="&#xf190;"></span>
 					</div>
 					
@@ -72,6 +73,7 @@
 							Đăng kí
 						</a>
 					</div>
+					@csrf
 				</form>
 			</div>
 		</div>

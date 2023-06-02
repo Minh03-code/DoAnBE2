@@ -1,6 +1,8 @@
+@php
+use App\Models\Account;
+@endphp
 <!DOCTYPE html>
 <html lang="zxx">
-
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="Ogani Template">
@@ -8,11 +10,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Ogani | Template</title>
-
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
-
-
     <!-- Css Styles -->
     <link rel="stylesheet" href="customer/css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="customer/css/font-awesome.min.css" type="text/css">
@@ -23,8 +22,6 @@
     <link rel="stylesheet" href="customer/css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="customer/css/style.css" type="text/css">
     <link rel="stylesheet" href="customer/css/style-of-bill.css" type="text/css">
-
-
 </head>
 
 <body>
@@ -61,7 +58,7 @@
                 <ul>
                     <li><a href="information.php">Thông tin</a></li>
                     <li><a href="information.php">Đổi mật khẩu</a></li>
-                    <li><a href="logout.php">Đăng xuất</a></li>
+                    <li><a href="">Đăng xuất</a></li>
                 </ul>
             </div>
         </div>
@@ -96,22 +93,26 @@
                         <div class="header__top__right">
                             {{-- PC --}}
                             {{-- Khi chưa đăng nhập thì hiển thị --}}
+                            @if (!Session::has('account'))
                             <div class="header__top__right__auth">
                                 <a href="{{ route('login') }}"><i class="fa fa-user"></i> Đăng nhập</a>
                             </div>
-                            {{-- Khi đăng nhập thì hiển thị --}}
+                            @else
                             <div class="header__top__right__language">
                                 <i class="fa fa-user"></i>
                                 <div>
-                                    Tên tài khoản                                    
+                                        {{Account::find( Session::get('account') )->username}}
                                 </div>
                                 <span class="arrow_carrot-down"></span>
                                 <ul>
                                     <li><a href="{{ route('form-profile') }}">Thông tin</a></li>
                                     <li><a href="{{ route('change-password') }}">Đổi mật khẩu</a></li>
-                                    <li><a href="logout.php">Đăng xuất</a></li>
+                                    {{-- @method('POST') --}}
+                                    <li><a href="{{route('logout')}}">Đăng xuất</a></li>
                                 </ul>
                             </div>
+                            @endif
+                            {{-- Khi đăng nhập thì hiển thị --}}
                         </div>
                     </div>
                 </div>
