@@ -36,8 +36,7 @@
                             @endforeach
                         </select>
                     </div>
-                    <button type="submit" class="btn btn-primary">Ở đây hiển thị là chữ thêm nếu đường dẫn là add-product
-                        hoặc là chữ chỉnh sửa nếu đường dẫn là edit-product nếu làm biếng thì để là OK</button>
+                    <button type="submit" class="btn btn-primary">Hoàn tất chỉnh sửa</button>
                 </form>
             </div>
 
@@ -51,7 +50,8 @@
                Thêm Món Ăn
             </p>
             <div class="content-of-add-product">
-                <form action="#" method="POST">
+                <form action="{{ route('admin.createNewProduct') }}" method="POST" enctype="multipart/form-data">
+                    @method('POST')
                     <input type="hidden" name="product-id" > 
                     <div class="mb-3">
                         <label for="product-name" class="form-label">Tên món</label>
@@ -70,18 +70,27 @@
                         <input type="file" class="form-control" id="product-image" name="product-image">
                     </div>
                     <div class="mb-3">
-                        <label for="product-image" class="form-label">Chọn danh mục của món ăn</label>
+                        <label for="category-id" class="form-label">Chọn danh mục của món ăn</label>
                         <br>
-                        <select id="product-id" name="product-id" class="form-select">
-                            <option value="1" selected>Món Nước</option>
-                            <option value="2">Món Khô</option>
+                        <select id="category-id" name="category-id" class="form-select">
+                            @foreach($categories as $cate)
+                            @if($cate->id==$categories->first()->id)
+                            <option value="{{$cate->id}}" selected>{{$cate->name}}</option>
+                            @else
+                            <option value="{{$cate->id}}" >{{$cate->name}}</option>
+                            @endif
+                            @endforeach
                         </select>
                     </div>
-                    <button type="submit" class="btn btn-primary">Ở đây hiển thị là chữ thêm nếu đường dẫn là add-product
-                        hoặc là chữ chỉnh sửa nếu đường dẫn là edit-product nếu làm biếng thì để là OK</button>
+                    @csrf
+                    <button type="submit" class="btn btn-primary">Thêm món ăn</button>
                 </form>
             </div>
-
+            @if(isset($thongbao))
+            <div>
+                {{$thongbao}}
+            </div>
+            @endif
         </div>
     </div>
     @endif

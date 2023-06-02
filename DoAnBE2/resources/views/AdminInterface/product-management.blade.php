@@ -49,7 +49,7 @@
 					@endforeach
 				</tbody>
 			</table>
-				{{ $listProduct->links('pagination::bootstrap-5') }}
+				{{$listProduct->links('pagination::bootstrap-5') }}
 		</div>
 	</div>
 </main>

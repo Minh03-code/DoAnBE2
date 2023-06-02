@@ -9,6 +9,11 @@ class ProductLike extends Model
 {
     use HasFactory;
     protected $table = 'product_likes';
+
+    protected $fillable =[
+        'product_id',
+        'account_id'
+    ];
     //Start 5
     public static function countLikeByProductID($productID)
     {
