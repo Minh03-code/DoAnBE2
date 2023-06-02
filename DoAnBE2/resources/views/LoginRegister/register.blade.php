@@ -40,17 +40,30 @@
 						Đăng kí
 					</span>
 					
-						@if(isset($thongbao))
+						
+
+						 @if(isset($thongbao))
 						<div>
-							@if ($thongbao == 1)
-								 <div class="alert alert-success">
-									Đăng ký thành công
-								 </div>
-								 @else
-								 <div class="alert alert-danger">
-									Đăng ký thất bại
-								 </div>
-							 @endif
+							@switch($thongbao)
+							@case(1)
+							<div class="alert alert-success">
+								Đăng ký thành công
+							 </div>
+								@break
+							@case(2)
+							<div class="alert alert-danger">
+								Tài khoản đã tồn tại
+							 </div>
+								@break
+								@case(3)
+							<div class="alert alert-danger">
+								Xác nhận mật khẩu không đúng
+							 </div>
+								@break
+							@default
+								
+						@endswitch
+							
 						</div>
 						@endif
 					
@@ -92,7 +105,7 @@
 							Trang chủ
 						</a>
 						<a href="{{route('login')}}" class="txt2">
-							Đăng kí
+							Đăng nhập
 						</a>
 					</div>
 

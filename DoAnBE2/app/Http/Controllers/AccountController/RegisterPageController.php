@@ -18,13 +18,17 @@ class RegisterPageController extends Controller
         if ($password == $comfirmPassword) {
             if (Account::where('username', $username)->first('id') == null) {
                 $check = Account::create(['username' => $username, 'password' => Hash::make($password)]);
-
+            }else{
+                return view('LoginRegister/register', ["thongbao" => 2]);
             }
+            
+        }else{
+            return view('LoginRegister/register', ["thongbao" => 3]);
         }
+
         if ($check) {
             return view('LoginRegister/register', ["thongbao" => 1]);
         }
-        return view('LoginRegister/register', ["thongbao" => 2]);
         
     }
 }
