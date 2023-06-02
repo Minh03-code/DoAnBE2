@@ -10,12 +10,23 @@ class Bill extends Model
     use HasFactory;
     protected $table = 'bills';
 
+    protected $fillable = [
+        'account_id',
+        'name',
+        'address',
+        'phone_number',
+        'email',
+        'order_notes',
+        'payment_method',
+        'status'
+    ];
+
     public function getProductsOfBill(){
         $this->setAttribute("products_of_bill", $this->hasMany(BillProduct::class, "bill_id", "id")->get());
     }
 
     public static function getPaginationBillsByAccountID($account_id, $pagination) {
-        $result = self::where('account_id', $account_id)->paginate($pagination);
+        $result = self::where('account_id', $account_id)->orderBy('id', 'DESC')->paginate($pagination);
         if ($result){
             foreach ($result as $item) {
                 $item->getProductsOfBill();
