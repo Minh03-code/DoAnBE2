@@ -196,11 +196,11 @@ Route::group(['prefix'=>'admin','as'=>'admin.'], function(){
     Route::get('/change-password', function () {
         return view('AdminInterface/change-password');
     })->name('change-password');
-    Route::get('/contact-management',[ContactManagementPageController::class,'show'])->name('contact-management');
-});
-
     
     Route::get('/contact-management',[ContactManagementPageController::class,'show'])->name('contact-management');
 
     Route::post('/change-contact',[ContactManagementPageController::class,'changeContact'])->name('change-contact');
 });
+
+    
+   

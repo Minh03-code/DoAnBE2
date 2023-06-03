@@ -46,13 +46,13 @@ use App\Models\ProductLike;
                             <div class="product__item">
                                 <div class="product__item__pic set-bg" data-setbg="{{asset('img/'.$listP->image)}}">
                                     <ul class="product__item__pic__hover">
-<<<<<<< HEAD
+
                                         <li><a href="{{route('likeProduct',['id'=>$listP->id])}}"><i class="fa fa-heart"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-=======
-                                        <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                        
+
+                                       
                                         <li><a href="{{route('add-to-cart', ['productID'=>$listP->id])}}"><i class="fa fa-shopping-cart"></i></a></li>
->>>>>>> CUD/16-ChangeContact
+
                                     </ul>
                                 </div>
                                 <div class="product__item__text">

@@ -66,7 +66,7 @@ use App\Models\ProductLike;
                     <div class="featured__item">
                         <div class="featured__item__pic set-bg" data-setbg="{{asset('img/'.$product->image)}}">
                             <ul class="featured__item__pic__hover">
-<<<<<<< HEAD
+
 
                                 
                                
@@ -75,10 +75,6 @@ use App\Models\ProductLike;
                                  <li><a href="{{ route('add-to-cart', ['productID'=>$product->id]) }}"><i class="fa fa-shopping-cart"></i></a></li>
    
 
-=======
-                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                <li><a href="{{route('add-to-cart', ['productID'=>$product->id])}}"><i class="fa fa-shopping-cart"></i></a></li>
->>>>>>> CUD/16-ChangeContact
                             </ul>
                         </div>
                         <div class="featured__item__text">

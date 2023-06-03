@@ -40,7 +40,7 @@
                                     $total = 0;
                                 @endphp
                                 @foreach ($listProductOfAccount as $item)
-<<<<<<< HEAD
+
                                     <tr>
                                         <td class="shoping__cart__item">
                                             <img src="{{ asset('/img/cart/' . $item->product_image) }}" alt="">
@@ -61,7 +61,7 @@
                                                         <input type="submit" value="+" class="qtybtn" name="btnqty">
                                                     </form>
                                                 </div>
-=======
+
                                 <tr>
                                     <td class="shoping__cart__item">
                                         <img src="{{asset('/img/'.$item->product_image)}}" alt="">
@@ -74,7 +74,7 @@
                                         <div class="quantity">
                                             <div class="pro-qty">
                                                 <input type="text" value="{{$item->quantity}}">
->>>>>>> CUD/16-ChangeContact
+
                                             </div>
 
                                         </div>
