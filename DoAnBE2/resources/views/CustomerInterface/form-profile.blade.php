@@ -5,8 +5,12 @@
         <div class="container">
             <p class="title-form-n">Sửa thông tin</p>
             <div class="content-of-add-product">
-                <form action="#" method="POST">
-                    <input type="hidden" name="account-id"> {{-- Phải có category để biết đang sửa của tài khoản nào --}}
+                <form action="{{route('change-profile')}}" method="POST">
+                    @csrf
+                    <div class="mb-3">
+                        <label for="id-account" class="form-label">ID người dùng</label>
+                        <input type="number" class="form-control" name="account-id" value="{{ $profile->account_id }}" readonly>
+                    </div>
                     <div class="mb-3">
                         <label for="edit-name-customer" class="form-label">Tên người dùng</label>
                         <input type="text" class="form-control" id="edit-name-customer" name="edit-name-customer" value="{{$profile->name}}">
@@ -27,7 +31,6 @@
                     <button type="submit" class="btn btn-primary">Chấp nhận thay đổi</button>
                 </form>
             </div>
-
         </div>
     </div>
 @endsection

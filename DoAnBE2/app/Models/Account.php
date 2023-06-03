@@ -12,10 +12,8 @@ class Account extends Model
     protected $fillable = [
         'username',
         'password',
-       
+        'status'
     ];
-    
-
 
     //Start function 16
     public function getProfileAccount()

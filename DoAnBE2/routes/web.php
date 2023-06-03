@@ -84,9 +84,14 @@ Route::get('/change-password', function ()
 {
     return view('CustomerInterface/change-password');
 })->name('change-password'); 
+
 Route::post('/change-password',[ChangePasswordCustomerPageController::class,'changePassWord'])->name('change-password'); 
 
 Route::get('bill-history', [BillHistoryPageController::class, 'showBill'])->name('bill-history'); 
+
+
+Route::post('change-profile', [ProfileCustomerPageController::class, 'editProfile'])->name('change-profile');
+
 
 
 
@@ -180,10 +185,19 @@ Route::group(['prefix'=>'admin','as'=>'admin.'], function(){
     
     Route::get('/form-profile', [ProfileAdminController::class, 'show'])->name('form-profile');
 
+
     // Route::get('change-password', function () {
     //     return view('AdminInterface/change-password');
     // })->name('change-password');
     Route::post('/change-password',[ChangePasswordAdminController::class,'changePassWord'])->name('change-password');
+
+    Route::post('/change-profile', [ProfileAdminController::class, 'editProfile'])->name('change-profile');
+   
+    Route::get('/change-password', function () {
+        return view('AdminInterface/change-password');
+    })->name('change-password');
+    Route::get('/contact-management',[ContactManagementPageController::class,'show'])->name('contact-management');
+});
 
     
     Route::get('/contact-management',[ContactManagementPageController::class,'show'])->name('contact-management');
