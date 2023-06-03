@@ -5,7 +5,7 @@ use App\Models\ProductLike;
 
 @section('content')
     <!-- Breadcrumb Section Begin -->
-    <section class="breadcrumb-section set-bg" data-setbg="img/breadcrumb.jpg">
+    <section class="breadcrumb-section set-bg" data-setbg="{{asset('img/'.$contact->image_banner)}}">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -78,7 +78,7 @@ use App\Models\ProductLike;
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h6><a href="#">{{$product->name}}</a></h6>
+                            <h6><a href="{{route('detail',['id'=>$product->id])}}">{{$product->name}}</a></h6>
                             <h5>${{$product->price}}</h5>
                            
                             <h6>Lượt thích: {{ ProductLike::countLikeByProductID($product->id) }}</h6>
