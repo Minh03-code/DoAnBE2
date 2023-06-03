@@ -38,7 +38,7 @@
 						</td>
 						@else
 						<td>
-							<a href="#" class="btn btn-danger">Khóa</a>
+							<a href="{{route('admin.changeStt',['id'=>$item->id])}}" class="btn btn-danger">Khóa</a>
 						</td>
 						@endif
 						<td class="d-none d-md-table-cell">
