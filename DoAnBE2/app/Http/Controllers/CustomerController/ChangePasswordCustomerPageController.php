@@ -18,7 +18,7 @@ class ChangePasswordCustomerPageController extends MainCustomerController
             $oldPassword = $request->input('oldPassword');
             $newPassword = $request->input('newPassword');
             $confirmPassword = $request->input('confirmPassword');
-
+            $accountID = session()->get('account');
             if (Account::where('id', $accountID)->first() != null) {
                 if (Hash::check($oldPassword, Account::where('id', $accountID)->first()->password) == true) {
                     if ($newPassword == $confirmPassword) {
