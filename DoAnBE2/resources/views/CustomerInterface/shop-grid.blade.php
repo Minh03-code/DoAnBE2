@@ -44,7 +44,7 @@ use App\Models\ProductLike;
                          @foreach ($listProduct as $listP)
                         <div class="col-lg-4 col-md-6 col-sm-6">
                             <div class="product__item">
-                                <div class="product__item__pic set-bg" data-setbg="{{asset('img/'.$product->image)}}">
+                                <div class="product__item__pic set-bg" data-setbg="{{asset('img/'.$listP->image)}}">
                                     <ul class="product__item__pic__hover">
                                         <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                         <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
