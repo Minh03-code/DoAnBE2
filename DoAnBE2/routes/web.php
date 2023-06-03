@@ -15,9 +15,11 @@ use App\Http\Controllers\AdminController\ProductManagementPageController;
 use App\Http\Controllers\AdminController\CategoryManagementPageController;
 use App\Http\Controllers\AdminController\BillManagementPageController;
 use App\Http\Controllers\AdminController\AccountManagementPageController;
+use App\Http\Controllers\AdminController\ChangePasswordAdminController;
 use App\Http\Controllers\AdminController\ContactManagementPageController;
 use App\Http\Controllers\CustomerController\ProfileCustomerPageController;
 use App\Http\Controllers\AdminController\ProfileAdminController;
+use App\Http\Controllers\CustomerController\ChangePasswordCustomerPageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -66,9 +68,12 @@ Route::get('like', [LikePageController::class,'likePage'])->name('like');
 
 Route::get('form-profile',[ProfileCustomerPageController::class,'edit_profile'])->name('form-profile'); 
 
-Route::get('change-password', function () {
+Route::get('/change-password', function ()
+{
     return view('CustomerInterface/change-password');
 })->name('change-password'); 
+Route::post('/change-password',[ChangePasswordCustomerPageController::class,'changePassWord'])->name('change-password'); 
+
 Route::get('bill-history', [BillHistoryPageController::class, 'showBill'])->name('bill-history'); 
 
 // Login Register
@@ -107,9 +112,12 @@ Route::group(['prefix'=>'admin','as'=>'admin.'], function(){
     Route::get('/edit-category', [CategoryManagementPageController::class, 'showCategoryForEditPage'])->name('edit-category');
     Route::get('/form-profile', [ProfileAdminController::class, 'show'])->name('form-profile');
 
-    Route::get('/change-password', function () {
-        return view('AdminInterface/change-password');
-    })->name('change-password');
+    // Route::get('change-password', function () {
+    //     return view('AdminInterface/change-password');
+    // })->name('change-password');
+    Route::post('/change-password',[ChangePasswordAdminController::class,'changePassWord'])->name('change-password');
+
+    
     Route::get('/contact-management',[ContactManagementPageController::class,'show'])->name('contact-management');
 });
 
