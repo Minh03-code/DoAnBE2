@@ -4,7 +4,11 @@
     <main class="content">
         <div class="container-fluid p-0">
 
-
+            @if(Session::has('success'))
+            <div class="alert alert-success">
+                {{ Session::get('success') }}
+            </div>
+            @endif
             <div class="card flex-fill">
                 <div class="card-header">
                     <div class="row">
@@ -36,17 +40,15 @@
                             <td class="d-none d-xl-table-cell">{{ $bill->phone_number}}</td>
                             <td>
                                 @if ($bill->status == 0)
-                                <a href="#" class="btn btn-success">chưa giao</a>
+                                <a href="#" class="btn btn-success">Chưa giao</a>
                                 
                                 @else
                                 <a href="#" class="btn btn-danger">Đã giao</a>
-                                @endif
-                                
-                                
+                                @endif                              
                             </td>
                             <td class="d-none d-md-table-cell">
-                                <a href="#" class="btn btn-primary">Hủy</a>
-                            </td>
+                                <a href="{{ route('admin.deleteBillById',['billId' => $bill->id])}}" class="btn btn-primary">Hủy</a>
+                            </td> 
                         </tr>
                         @endforeach
                     </tbody>

@@ -20,6 +20,7 @@ use App\Http\Controllers\AdminController\AccountManagementPageController;
 use App\Http\Controllers\AdminController\ContactManagementPageController;
 use App\Http\Controllers\CustomerController\ProfileCustomerPageController;
 use App\Http\Controllers\AdminController\ProfileAdminController;
+use App\Http\Controllers\BillController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -116,12 +117,16 @@ Route::group(['prefix'=>'admin','as'=>'admin.'], function(){
         return view('AdminInterface/product-management');
     })->name('product-management');
 
-
+               
     //Start Product-Management
     Route::get('/product-management', [ProductManagementPageController::class, 'getPaginationProducts'])->name('product-management');
     Route::get('/category-management', [CategoryManagementPageController::class, 'showCategory'])->name('category-management');
     Route::get('/bill-management', [BillManagementPageController::class, 'showBill'])->name('bill-management');
-    //Start account-management
+
+    //deleteBillById
+    Route::get('/deleteBillById', [BillManagementPageController::class, 'deleteBillByBillID'])->name('deleteBillById');           
+
+    //Start account-management         
     Route::get('/account-management', [AccountManagementPageController::class, 'getPaginationAccount'])->name('account-management');
 
     Route::get('/add-product', [ProductManagementPageController::class,'getCategoryForAddNewProductPage'])->name('add-product');
@@ -131,6 +136,8 @@ Route::group(['prefix'=>'admin','as'=>'admin.'], function(){
         [ProductManagementPageController::class,'createNewProduct']
     )->name('createNewProduct');
     //Them sản phẩm
+
+    
 
     Route::get('/edit-product', [ProductManagementPageController::class,'showProductForEditPage'])->name('edit-product');
     //Sửa sản phẩm
