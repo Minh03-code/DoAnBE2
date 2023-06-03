@@ -20,6 +20,7 @@ use App\Models\ProductLike;
             </div>
         </div>
     </section>
+    
     <!-- Breadcrumb Section End -->
 
     <!-- Categories Section Begin -->
