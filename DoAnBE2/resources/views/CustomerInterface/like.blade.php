@@ -47,6 +47,9 @@
                                     <td class="shoping__cart__item__close">
                                         <span class="icon_close"></span>
                                     </td>
+                                    <td>
+                                                <a class="btn btn-primary" href="{{route('add-to-cart', ['productID'=>$item->id])}}"><i class="fa fa-shopping-cart"></i></a>
+                                            </td>
                                 </tr>
                                 @endforeach
                             </tbody>

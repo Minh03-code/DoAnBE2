@@ -96,8 +96,7 @@ use App\Models\ProductLike;
                         <div class="product__item__pic set-bg" data-setbg="{{asset('img/'.$splq->image)}}">
                             <ul class="product__item__pic__hover">
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                <li><a href="{{route('add-to-cart', ['productID'=>$splq->id])}}"><i class="fa fa-shopping-cart"></i></a></li>
                             </ul>
                         </div>
                         <div class="product__item__text">
