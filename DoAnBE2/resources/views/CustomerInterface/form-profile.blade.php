@@ -13,19 +13,19 @@
                     </div>
                     <div class="mb-3">
                         <label for="edit-name-customer" class="form-label">Tên người dùng</label>
-                        <input type="text" class="form-control" id="edit-name-customer" name="edit-name-customer" value="{{Session::has('account') ? $profile->name: ''}}">
+                        <input type="text" class="form-control" id="edit-name-customer" name="edit-name-customer" value="{{$profile != null ? $profile->name: ''}}">
                     </div>
                     <div class="mb-3">
                         <label for="address" class="form-label">Địa chỉ</label>
-                        <input type="text" class="form-control" id="address" name="address" value="{{Session::has('account') ? $profile->address: ''}}">
+                        <input type="text" class="form-control" id="address" name="address" value="{{$profile != null ? $profile->address: ''}}">
                     </div>
                     <div class="mb-3">
                         <label for="edit-email" class="form-label">Email</label>
-                        <input type="text" class="form-control" id="edit-email" name="edit-email" value="{{Session::has('account') ? $profile->email: ''}}">
+                        <input type="text" class="form-control" id="edit-email" name="edit-email" value="{{$profile != null ? $profile->email: ''}}">
                     </div>
                     <div class="mb-3">
                         <label for="edit-phone" class="form-label">Số điện thoại</label>
-                        <input type="text" class="form-control" id="edit-phone" name="edit-phone" value="{{Session::has('account') ? $profile->phone_number: ''}}">
+                        <input type="text" class="form-control" id="edit-phone" name="edit-phone" value="{{$profile != null ? $profile->phone_number: ''}}">
                     </div>
 
                     <button type="submit" class="btn btn-primary">Chấp nhận thay đổi</button>
