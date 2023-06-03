@@ -28,8 +28,11 @@
                         <tr>
                             <td>#{{$item->id}}</td>
                             <td class="d-none d-xl-table-cell">{{$item->username}}</td>
+                            @if ($item->profileAccount != null)
                             <td class="d-none d-xl-table-cell">{{$item->profileAccount->name}}</td>
-                            
+                            @else
+                            <td class="d-none d-xl-table-cell">Chua co ten khach hang</td>
+                            @endif
                             @if ($item->status == '0')
                             <td>
                                 <a href="#" class="btn btn-success">Bình thường</a>
