@@ -185,7 +185,7 @@ Route::group(['prefix'=>'admin','as'=>'admin.'], function(){
     
     Route::get('/form-profile', [ProfileAdminController::class, 'show'])->name('form-profile');
 
-
+    Route::get('/changeStatusBillByBillID', [BillManagementPageController::class, 'changeStatusBillByBillID'])->name('changeStatusBillByBillID'); 
     // Route::get('change-password', function () {
     //     return view('AdminInterface/change-password');
     // })->name('change-password');
