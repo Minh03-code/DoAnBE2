@@ -40,7 +40,7 @@
                                     @foreach ($searchResults as $item)
                                         <tr>
                                             <td class="shoping__cart__item">
-                                                <img src="img/cart/cart-1.jpg" alt="">
+                                                <img src="{{asset('img/'.$item->image)}}" alt="">
                                                 <h5>{{ $item->name }}</h5>
                                             </td>
                                             <td class="shoping__cart__price">
