@@ -158,6 +158,9 @@ Route::group(['prefix'=>'admin','as'=>'admin.'], function(){
     )->name('createNewProduct');
     //Them sản phẩm
 
+    Route::get('/ChangeStatusAccountByAccountID', [AccountManagementPageController::class, 'ChangeStatusAccountByAccountID'])->name('ChangeStatusAccountByAccountID'); 
+
+    
 
     Route::get('/edit-product', [ProductManagementPageController::class,'showProductForEditPage'])->name('edit-product');
     //Sửa sản phẩm

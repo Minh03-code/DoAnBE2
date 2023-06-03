@@ -12,4 +12,22 @@ class AccountManagementPageController extends MainAdminController
         $result = Account::getPaginationAccount(5);
         return view('AdminInterface.account-management', ["listAccount"=>$result]);
     }
+
+    public function changeStatusAccountByAccountID(Request $request)
+    { 
+        $account = Account::where('id', '=', $request->accountId)->first();
+        $status = $account->status;
+        if ($status == 1){   
+            $data = [
+                'status' => 0
+            ];                                                 
+        }
+        else{
+            $data = [
+                'status' => 1
+            ]; 
+        }
+        $account->update($data);
+        return redirect('admin/account-management');
+    }
 }

@@ -9,7 +9,7 @@ class Account extends Model
 {
     use HasFactory;
     protected $table = 'accounts';
-    protected $fillable = [
+ 	protected $fillable = [
         'username',
         'password',
         'status'
