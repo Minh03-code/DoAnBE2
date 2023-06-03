@@ -8,7 +8,8 @@
                Sửa Món Ăn
             </p>
             <div class="content-of-add-product">
-                <form action="#" method="POST">
+                <form action="{{route('admin.edit_product',['id'=>$product->id])}}" method="POST" enctype="multipart/form-data">
+                    @method('POST')
                     <input type="hidden" name="product-id" value="{{$product->id}}"> 
                     <div class="mb-3">
                         <label for="product-name" class="form-label">Tên món</label>
@@ -23,22 +24,29 @@
                         <input type="text" class="form-control" id="product-description" name="product-description" value="{{$product->description}}">
                     </div>
                     <div class="mb-3">
-                        <label for="product-image" class="form-label">Chọn ảnh</label>
-                        <input type="hidden" value="{{asset($product->image)}}" name="imageOld">
-                        <input type="file" class="form-control" id="product-image" name="product-image" >
+                        <label for="product-image" class="form-label" >Chọn ảnh</label>
+                        <input type="hidden" value="{{$product->image}}" name="imageOld">
+                        <input type="file" class="form-control" id="product-image" name="product-image">
                     </div>
                     <div class="mb-3">
                         <label for="product-image" class="form-label">Chọn danh mục của món ăn</label>
                         <br>
-                        <select id="product-id" name="product-id" class="form-select">
+                        <select id="category-id" name="category-id" class="form-select">
                             @foreach($categories as $cate)
                             <option value="{{$cate->id}}" {{$product->category_id == "$cate->id" ? "selected":""}}>{{$cate->name}}</option>
                             @endforeach
                         </select>
                     </div>
-                    <button type="submit" class="btn btn-primary">Ở đây hiển thị là chữ thêm nếu đường dẫn là add-product
-                        hoặc là chữ chỉnh sửa nếu đường dẫn là edit-product nếu làm biếng thì để là OK</button>
+                    @csrf
+                    <button type="submit" class="btn btn-primary">Hoàn Tất Chỉnh Sửa</button>
                 </form>
+                
+                @if(isset($thongbao))
+                <div>
+                    {{$thongbao}}
+                </div>
+                @endif
+               
             </div>
 
         </div>
@@ -51,7 +59,8 @@
                Thêm Món Ăn
             </p>
             <div class="content-of-add-product">
-                <form action="#" method="POST">
+                <form action="{{ route('admin.createNewProduct') }}" method="POST" enctype="multipart/form-data">
+                    @method('POST')
                     <input type="hidden" name="product-id" > 
                     <div class="mb-3">
                         <label for="product-name" class="form-label">Tên món</label>
@@ -70,18 +79,27 @@
                         <input type="file" class="form-control" id="product-image" name="product-image">
                     </div>
                     <div class="mb-3">
-                        <label for="product-image" class="form-label">Chọn danh mục của món ăn</label>
+                        <label for="category-id" class="form-label">Chọn danh mục của món ăn</label>
                         <br>
-                        <select id="product-id" name="product-id" class="form-select">
-                            <option value="1" selected>Món Nước</option>
-                            <option value="2">Món Khô</option>
+                        <select id="category-id" name="category-id" class="form-select">
+                            @foreach($categories as $cate)
+                            @if($cate->id==$categories->first()->id)
+                            <option value="{{$cate->id}}" selected>{{$cate->name}}</option>
+                            @else
+                            <option value="{{$cate->id}}" >{{$cate->name}}</option>
+                            @endif
+                            @endforeach
                         </select>
                     </div>
-                    <button type="submit" class="btn btn-primary">Ở đây hiển thị là chữ thêm nếu đường dẫn là add-product
-                        hoặc là chữ chỉnh sửa nếu đường dẫn là edit-product nếu làm biếng thì để là OK</button>
+                    @csrf
+                    <button type="submit" class="btn btn-primary">Thêm món ăn</button>
                 </form>
             </div>
-
+            @if(isset($thongbao))
+            <div>
+                {{$thongbao}}
+            </div>
+            @endif
         </div>
     </div>
     @endif

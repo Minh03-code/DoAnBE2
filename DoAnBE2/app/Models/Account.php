@@ -10,6 +10,11 @@ class Account extends Model
     use HasFactory;
     protected $table = 'accounts';
 
+    protected $fillable = [
+        'username',
+        'password',
+    ];
+
     //Start function 16
     public function getProfileAccount()
     {

@@ -18,4 +18,36 @@ class CategoryManagementPageController extends MainAdminController
         $category = Category::find($request->id);
         return view('AdminInterface/form-category',['category'=>$category]);
     }
+    public function addCategory(Request $request){
+        $truongDuLieuAnh = "category-image";
+        if($request->$truongDuLieuAnh != null && $request->input('category-name') != null && $request->input('category-description')){
+        $image = $request->$truongDuLieuAnh;
+        $img_name = time().'.'.$request->$truongDuLieuAnh->extension();
+        $image->move(public_path('img'),$img_name);
+        $category = new Category();
+        $category->name = $request->input('category-name');
+        $category->image = $img_name;
+        $category->description = $request->input('category-description');
+        $category->save();
+        return redirect()->route('admin.category-management')->with('status', 'Image Has been uploaded');
+        }else{
+        return redirect()->route('admin.category-management')->with('dataempty', 'data field cannot be empty');
+        }
+    }
+    public function ChangeStatusCategory(Request $request){
+        $category = Category::where('id', '=', $request->id)->first();
+        $status = $category->status;
+        if ($status == 1){   
+            $data = [
+                'status' => 0
+            ];                                                 
+        }
+        else{
+            $data = [
+                'status' => 1
+            ]; 
+        }
+        $category->update($data);
+        return redirect()->route('admin.category-management');
+    }
 }

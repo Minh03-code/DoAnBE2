@@ -1,7 +1,6 @@
 @extends('CustomerInterface/main')
 
 @section('content')
-
     <!-- Breadcrumb Section Begin -->
     <section class="breadcrumb-section set-bg" data-setbg="img/breadcrumb.jpg">
         <div class="container">
@@ -41,19 +40,28 @@
                                     $total = 0;
                                 @endphp
                                 @foreach ($listProductOfAccount as $item)
-                                <tr>
-                                    <td class="shoping__cart__item">
-                                        <img src="{{asset('/img/cart/'.$item->product_image)}}" alt="">
-                                        <h5>{{$item->product_name}}</h5>
-                                    </td>
-                                    <td class="shoping__cart__price">
-                                        ${{$item->product_price}}
-                                    </td>
-                                    <td class="shoping__cart__quantity">
-                                        <div class="quantity">
-                                            <div class="pro-qty">
-                                                <input type="text" value="{{$item->quantity}}">
+                                    <tr>
+                                        <td class="shoping__cart__item">
+                                            <img src="{{ asset('/img/cart/' . $item->product_image) }}" alt="">
+                                            <h5>{{ $item->product_name }}</h5>
+                                        </td>
+                                        <td class="shoping__cart__price">
+                                            ${{ $item->product_price }}
+                                        </td>
+                                        <td class="shoping__cart__quantity">
+                                            <div class="quantity">
+                                                <div class="pro-qty">
+                                                    <form action="{{ route('edit-quantity-cart')}}" method="POST">
+                                                        @csrf
+                                                        <input type="submit" value="-" class="qtybtn" name="btnqty">
+                                                        <input type="text" value="{{ $item->quantity }}"
+                                                            name="quantityItem">
+                                                            <input type="hidden" name="itemID" value="{{ $item->product_id}}">
+                                                        <input type="submit" value="+" class="qtybtn" name="btnqty">
+                                                    </form>
+                                                </div>
                                             </div>
+
                                         </div>
                                     </td>
                                     <td class="shoping__cart__total">
@@ -63,7 +71,7 @@
                                         @endphp
                                     </td>
                                     <td class="shoping__cart__item__close">
-                                        <span class="icon_close"></span>
+                                        <a href="{{ route('delete-item-in-cart', ['itemID'=>$item->product_id]) }}"><span class="icon_close"></span></a>
                                     </td>
                                 </tr>
                                 @endforeach
@@ -74,16 +82,16 @@
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                    
-                </div> 
+
+                </div>
                 <div class="col-lg-6">
-                    
+
                 </div>
                 <div class="col-lg-6">
                     <div class="shoping__checkout">
                         <h5>Tổng giỏ hàng</h5>
                         <ul>
-                            <li>Tổng <span>${{$total}}</span></li>
+                            <li>Tổng <span>${{ $total }}</span></li>
                         </ul>
                         <a href="{{ route('checkout') }}" class="primary-btn">THỦ TỤC THANH TOÁN</a>
                     </div>

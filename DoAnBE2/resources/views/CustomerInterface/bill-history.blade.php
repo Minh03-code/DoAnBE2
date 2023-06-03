@@ -132,5 +132,6 @@
                 @endif
             </div>
         </div>
+        {{ $bills->links('pagination::bootstrap-5') }}
     </div>
 @endsection

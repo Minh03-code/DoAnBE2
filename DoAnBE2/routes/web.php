@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AccountController\LoginPageController;
+use App\Http\Controllers\AccountController\RegisterPageController;
 use App\Http\Controllers\CustomerController\HomePageController;
 use App\Http\Controllers\CustomerController\ShopPageController;
 use App\Http\Controllers\SearchController;
@@ -64,6 +66,12 @@ Route::get('search',[SearchController::class,'ResultSearchOnShopPage'] )->name('
 Route::get('like', [LikePageController::class,'likePage'])->name('like'); 
 
 
+Route::get('likeProduct', [LikePageController::class,'likeProductForAccountID'])->name('likeProduct'); 
+
+//deleteItemInProductsLiked
+Route::get('deleteItemInProductsLiked', [LikePageController::class,'deleteItemInProductsLiked'])->name('deleteItemInProductsLiked'); 
+
+
 Route::get('form-profile',[ProfileCustomerPageController::class,'edit_profile'])->name('form-profile'); 
 
 Route::get('change-password', function () {
@@ -71,13 +79,35 @@ Route::get('change-password', function () {
 })->name('change-password'); 
 Route::get('bill-history', [BillHistoryPageController::class, 'showBill'])->name('bill-history'); 
 
+
+ 
+Route::get('add-to-cart', [CartPageController::class, 'addToCartByAccountID'])->name('add-to-cart');
+
+
+Route::post('edit-quantity-cart', [CartPageController::class, 'editQuantityOfItemInCartByAccountID'])->name('edit-quantity-cart');
+
+Route::get('delete-item-in-cart', [CartPageController::class, 'deleteItemInCartByProductID'])->name('delete-item-in-cart'); 
+
+Route::post('info-receive', [CheckOutPageController::class, 'createBillByAccountID'])->name('info-receive');
+
+
 // Login Register
 Route::get('login', function () {
     return view('LoginRegister/login');
 })->name('login'); 
+
+Route::post('login', [LoginPageController::class,'checkLogin'])->name('login'); 
+// Logout
+Route::get('louout', [LoginPageController::class,'logout'])->name('logout'); 
+// End module login 
+
+
+// Start Register
 Route::get('register', function () {
     return view('LoginRegister/register');
-})->name('register');
+})->name('register'); 
+Route::post('create-account', [RegisterPageController::class, "register"])->name('create-account');
+// End Register
 
 // Admin interface
 Route::group(['prefix'=>'admin','as'=>'admin.'], function(){
@@ -94,17 +124,35 @@ Route::group(['prefix'=>'admin','as'=>'admin.'], function(){
     //Start account-management
     Route::get('/account-management', [AccountManagementPageController::class, 'getPaginationAccount'])->name('account-management');
 
-    Route::get('/add-product', function () {
-        return view('AdminInterface/form-product');
-    })->name('add-product');
+    Route::get('/add-product', [ProductManagementPageController::class,'getCategoryForAddNewProductPage'])->name('add-product');
+     
+     //Them sản phẩm
+    Route::post('/createNewProduct', 
+        [ProductManagementPageController::class,'createNewProduct']
+    )->name('createNewProduct');
+    //Them sản phẩm
 
     Route::get('/edit-product', [ProductManagementPageController::class,'showProductForEditPage'])->name('edit-product');
+    //Sửa sản phẩm
+    Route::post('/product-management', 
+        [ProductManagementPageController::class,'editProductInformationByProduct']
+    )->name('edit_product');
+
+    Route::get('/edit-product', [ProductManagementPageController::class,'showProductForEditPage'])->name('edit-product');
+
+    Route::get('/product-management-change', [ProductManagementPageController::class, 'changeStatusOfProductByProduct'])->name('changeStt');
 
     Route::get('/add-category', function () {
         return view('AdminInterface/form-category');
     })->name('add-category');
 
+
+    Route::post('/add-category',[CategoryManagementPageController::class, 'addCategory'])->name('addCategory');;
+
+    Route::get('/ChangeStatusCategory', [CategoryManagementPageController::class, 'ChangeStatusCategory'])->name('ChangeStatusCategory'); 
+
     Route::get('/edit-category', [CategoryManagementPageController::class, 'showCategoryForEditPage'])->name('edit-category');
+    
     Route::get('/form-profile', [ProfileAdminController::class, 'show'])->name('form-profile');
 
     Route::get('/change-password', function () {
