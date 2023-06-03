@@ -89,6 +89,7 @@ Route::post('/change-password',[ChangePasswordCustomerPageController::class,'cha
 Route::get('bill-history', [BillHistoryPageController::class, 'showBill'])->name('bill-history'); 
 
 
+
  
 Route::get('add-to-cart', [CartPageController::class, 'addToCartByAccountID'])->name('add-to-cart');
 

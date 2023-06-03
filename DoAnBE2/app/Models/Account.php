@@ -14,6 +14,7 @@ class Account extends Model
         'password',
        
     ];
+    
 
     protected $fillable = [
         'username',

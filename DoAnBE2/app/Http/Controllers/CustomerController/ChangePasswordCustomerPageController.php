@@ -29,6 +29,5 @@ class ChangePasswordCustomerPageController extends MainCustomerController
             }
         }
         return view('CustomerInterface/change-password')->with('thongbao',2);
-
     }
 }
