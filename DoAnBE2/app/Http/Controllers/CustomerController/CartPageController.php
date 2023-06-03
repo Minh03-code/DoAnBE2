@@ -22,21 +22,24 @@ class CartPageController extends Controller
 
     public function addToCartByAccountID(Request $request)
     {
-        $accountID = 1;
-        $product = Product::getProductByID($request->productID);
-        if (Cart::where([
-            ['account_id', '=', $accountID],
-            ['product_id', '=', $product->id]
+        if (session()->has('account')) {
+            $accountID = session()->get('account');
+            $product = Product::getProductByID($request->productID);
+            if (Cart::where([
+                ['account_id', '=', $accountID],
+                ['product_id', '=', $product->id]
             ])->first() == null) {
-            Cart::create([
-                'account_id' => $accountID,
-                'product_id' => $product->id,
-                'product_name' => $product->name,
-                'product_price' => $product->price,
-                'product_image' => $product->image,
-                'quantity' => 1
-            ]);
+                Cart::create([
+                    'account_id' => $accountID,
+                    'product_id' => $product->id,
+                    'product_name' => $product->name,
+                    'product_price' => $product->price,
+                    'product_image' => $product->image,
+                    'quantity' => 1
+                ]);
+            }
+            return view('CustomerInterface.shoping-cart', ["listProductOfAccount" => Cart::getItemsInCartTableByAccountID($accountID)]);
         }
-        return view('CustomerInterface.shoping-cart', ["listProductOfAccount" => Cart::getItemsInCartTableByAccountID($accountID)]);
+        return view('LoginRegister.login');
     }
 }
