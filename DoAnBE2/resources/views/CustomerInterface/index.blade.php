@@ -29,7 +29,7 @@ use App\Models\ProductLike;
                 <div class="categories__slider owl-carousel">
                 @foreach($categories as $cate)
                     <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="img/categories/{{$cate->image}}">
+                        <div class="categories__item set-bg" data-setbg="{{asset('img/'.$cate->image)}}">
                             <h5><a href="#">{{$cate->name}}</a></h5>
                         </div>
                     </div>
@@ -62,7 +62,7 @@ use App\Models\ProductLike;
                 @foreach($products as $product)
                 <div class="col-lg-3 col-md-4 col-sm-6 mix c{{$product->category_id}}">
                     <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg="img/product/{{$product->image}}">
+                        <div class="featured__item__pic set-bg" data-setbg="{{asset('img/'.$product->image)}}">
                             <ul class="featured__item__pic__hover">
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                 <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>

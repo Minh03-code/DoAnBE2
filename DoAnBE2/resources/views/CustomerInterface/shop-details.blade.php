@@ -32,7 +32,7 @@ use App\Models\ProductLike;
                     <div class="product__details__pic">
                         <div class="product__details__pic__item">
                             <img class="product__details__pic__item--large"
-                                src="{{asset('img/product/details/'.$sanpham->image)}}" alt="">
+                                src="{{asset('img/'.$sanpham->image)}}" alt="">
                         </div>
                     </div>
                 </div>
@@ -93,7 +93,7 @@ use App\Models\ProductLike;
                 @foreach ($sanphamlienquan as $splq)
                 <div class="col-lg-3 col-md-4 col-sm-6">
                     <div class="product__item">
-                        <div class="product__item__pic set-bg" data-setbg="img/product/product-1.jpg">
+                        <div class="product__item__pic set-bg" data-setbg="{{asset('img/'.$splq->image)}}">
                             <ul class="product__item__pic__hover">
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                 <li><a href="#"><i class="fa fa-retweet"></i></a></li>

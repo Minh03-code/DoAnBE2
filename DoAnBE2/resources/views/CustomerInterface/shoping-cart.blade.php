@@ -43,7 +43,7 @@
                                 @foreach ($listProductOfAccount as $item)
                                 <tr>
                                     <td class="shoping__cart__item">
-                                        <img src="{{asset('/img/cart/'.$item->product_image)}}" alt="">
+                                        <img src="{{asset('/img/'.$item->product_image)}}" alt="">
                                         <h5>{{$item->product_name}}</h5>
                                     </td>
                                     <td class="shoping__cart__price">

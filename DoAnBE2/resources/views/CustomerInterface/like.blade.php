@@ -38,7 +38,7 @@
                                 @foreach($mangSpYeuThich as $item)
                                 <tr>
                                     <td class="shoping__cart__item">
-                                        <img src="img/cart/{{$item->image}}" alt="" style="width:100px;height:100px;">
+                                        <img src="{{asset('img/'.$item->image)}}" alt="" style="width:100px;height:100px;">
                                         <h5>{{$item->name}}</h5>
                                     </td>
                                     <td class="shoping__cart__price">
