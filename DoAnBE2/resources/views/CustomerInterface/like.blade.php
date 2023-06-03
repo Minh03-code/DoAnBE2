@@ -38,7 +38,7 @@
                                 @foreach($mangSpYeuThich as $item)
                                 <tr>
                                     <td class="shoping__cart__item">
-                                        <img src="img/cart/{{$item->image}}" alt="" style="width:100px;height:100px;">
+                                        <img src="{{asset('img/'.$item->image)}}" alt="" style="width:100px;height:100px;">
                                         <h5>{{$item->name}}</h5>
                                     </td>
                                     <td class="shoping__cart__price">
@@ -47,6 +47,9 @@
                                     <td class="shoping__cart__item__close">
                                         <a href="{{route('deleteItemInProductsLiked', ['productId' => $item->id])}}"><span  class="icon_close" ></span></a>
                                     </td>
+                                    <td>
+                                                <a class="btn btn-primary" href="{{route('add-to-cart', ['productID'=>$item->id])}}"><i class="fa fa-shopping-cart"></i></a>
+                                            </td>
                                 </tr>
                                 @endforeach
                             </tbody>

@@ -40,7 +40,7 @@
                                     @foreach ($searchResults as $item)
                                         <tr>
                                             <td class="shoping__cart__item">
-                                                <img src="img/cart/cart-1.jpg" alt="">
+                                                <img src="{{asset('img/'.$item->image)}}" alt="">
                                                 <h5>{{ $item->name }}</h5>
                                             </td>
                                             <td class="shoping__cart__price">
@@ -48,6 +48,10 @@
                                             </td>
                                             <td class="shoping__cart__description">
                                                 {{ $item->description }}
+                                            </td>
+                                            <td>
+
+                                                <a class="btn btn-primary" href="{{route('add-to-cart', ['productID'=>$item->id])}}"><i class="fa fa-shopping-cart"></i></a>
                                             </td>
                                         </tr>
                                     @endforeach
