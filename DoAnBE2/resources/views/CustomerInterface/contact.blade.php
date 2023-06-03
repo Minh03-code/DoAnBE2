@@ -41,7 +41,7 @@
                     <div class="contact__widget">
                         <span class="icon_clock_alt"></span>
                         <h4>Thời gian mở</h4>
-                        <p>{{$contact->open_time}} AM to {{$contact->clone_time}} PM</p>
+                        <p>{{$contact->open_time}} AM to {{$contact->close_time}} PM</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-6 text-center">

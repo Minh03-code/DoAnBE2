@@ -132,12 +132,18 @@ Route::group(['prefix'=>'admin','as'=>'admin.'], function(){
     Route::get('/add-product', [ProductManagementPageController::class,'getCategoryForAddNewProductPage'])->name('add-product');
      
      //Them sản phẩm
+
     Route::post('/createNewProduct', 
         [ProductManagementPageController::class,'createNewProduct']
     )->name('createNewProduct');
     //Them sản phẩm
 
     
+    Route::post('/product-management', 
+        [ProductManagementPageController::class,'createNewProduct']
+    )->name('createNewProduct');
+    //Them sản phẩm
+
 
     Route::get('/edit-product', [ProductManagementPageController::class,'showProductForEditPage'])->name('edit-product');
     //Sửa sản phẩm
@@ -154,9 +160,12 @@ Route::group(['prefix'=>'admin','as'=>'admin.'], function(){
     })->name('add-category');
 
 
-    Route::post('/add-category',[CategoryManagementPageController::class, 'addCategory'])->name('addCategory');;
+
+    Route::post('/add-category',[CategoryManagementPageController::class, 'addCategory'])->name('addCategory');
 
     Route::get('/ChangeStatusCategory', [CategoryManagementPageController::class, 'ChangeStatusCategory'])->name('ChangeStatusCategory'); 
+
+
 
     Route::get('/edit-category', [CategoryManagementPageController::class, 'showCategoryForEditPage'])->name('edit-category');
     
@@ -166,5 +175,6 @@ Route::group(['prefix'=>'admin','as'=>'admin.'], function(){
         return view('AdminInterface/change-password');
     })->name('change-password');
     Route::get('/contact-management',[ContactManagementPageController::class,'show'])->name('contact-management');
-});
 
+    Route::post('/change-contact',[ContactManagementPageController::class,'changeContact'])->name('change-contact');
+});
