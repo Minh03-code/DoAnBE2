@@ -40,11 +40,11 @@
                             <td class="d-none d-xl-table-cell">{{ $bill->phone_number}}</td>
                             <td>
                                 @if ($bill->status == 0)
-                                <a href="#" class="btn btn-success">Chưa giao</a>
+                                <a href="{{route('admin.changeStatusBillByBillID', ['billId' => $bill->id])}}" class="btn btn-success">Chưa giao</a>
                                 
                                 @else
-                                <a href="#" class="btn btn-danger">Đã giao</a>
-                                @endif                              
+                                <a href="{{route('admin.changeStatusBillByBillID', ['billId' => $bill->id])}}" class="btn btn-danger">Đã giao</a>
+                                @endif                           
                             </td>
                             <td class="d-none d-md-table-cell">
                                 <a href="{{ route('admin.deleteBillById',['billId' => $bill->id])}}" class="btn btn-primary">Hủy</a>
