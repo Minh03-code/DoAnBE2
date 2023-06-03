@@ -101,7 +101,13 @@ public function createNewProduct(Request $request){
      public function changeStatusOfProductByProduct(Request $request)
     {
         $product = Product::find($request->id);
+        if($product->status==0)
+        {
         $product->status = 1;
+        }
+        else{
+            $product->status = 0;
+        }
         $product->update();
         return redirect('admin/product-management');
         
