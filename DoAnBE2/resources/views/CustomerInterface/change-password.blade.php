@@ -1,5 +1,6 @@
 @extends('CustomerInterface/main')
 
+
 @section('content')
     <div class="form-margin-m">
         <div class="container">

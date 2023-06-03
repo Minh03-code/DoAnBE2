@@ -76,6 +76,7 @@ Route::post('/change-password',[ChangePasswordCustomerPageController::class,'cha
 
 Route::get('bill-history', [BillHistoryPageController::class, 'showBill'])->name('bill-history'); 
 
+
 // Login Register
 Route::get('login', function () {
     return view('LoginRegister/login');
