@@ -66,14 +66,7 @@ use App\Models\Account;
             <ul>
                 <li class="active"><a href="{{ route('home') }}">Trang chủ</a></li>
                 <li><a href="{{ route('shop') }}">Cửa hàng</a></li>
-                <li><a href="#">Pages</a>
-                    <ul class="header__menu__dropdown">
-                        <li><a href="{{ route('detail') }}">Chi tiết sản phẩm</a></li>
-                        <li><a href="{{ route('cart') }}">Giỏ hàng</a></li>
-                        <li><a href="{{ route('checkout') }}">Thủ tục thanh toán</a></li>
-                        <li><a href="{{ route('bill-history') }}">Lịch sử thanh toán</a></li>
-                    </ul>
-                </li>
+                <li><a href="{{ route('bill-history') }}">Lịch sử thanh toán</a></li>
                 <li><a href="{{ route('contact') }}">Liên hệ</a></li>
                 <li><a href="{{ route('admin.product-management') }}">Quản lí</a></li>
             </ul>
@@ -132,14 +125,7 @@ use App\Models\Account;
                         <ul>
                             <li class="active"><a href="{{ route('home') }}">Trang chủ</a></li>
                             <li><a href="{{ route('shop') }}">Cửa hàng</a></li>
-                            <li><a href="#">Pages</a>
-                                <ul class="header__menu__dropdown">
-                                    <li><a href="{{ route('detail') }}">Chi tiết sản phẩm</a></li>
-                                    <li><a href="{{ route('cart') }}">Giỏ hàng</a></li>
-                                    <li><a href="{{ route('checkout') }}">Thủ tục thanh toán</a></li>
-                                    <li><a href="{{ route('bill-history') }}">Lịch sử thanh toán</a></li>
-                                </ul>
-                            </li>
+                            <li><a href="{{ route('bill-history') }}">Lịch sử thanh toán</a></li>
                             <li><a href="{{ route('contact') }}">Liên hệ</a></li>
                             <li><a href="{{ route('admin.product-management') }}">Quản lí</a></li>
                         </ul>
